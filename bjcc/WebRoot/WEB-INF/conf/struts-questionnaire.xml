@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="questionNaire" extends="struts2">
+		<action name="*QuestionNaireAction" class="questionNaireAction" method="{1}">
+			<result name="preparemain">/WEB-INF/pages/questionnaire/questionnaire_list.jsp</result>
+			<result name="preparemore">/WEB-INF/pages/questionnaire/questionnaire_more.jsp</result>
+			<result name="nairelist">/WEB-INF/pages/questionnaire/questionnaire_page_list.jsp</result>
+			<result name="tonaire">/WEB-INF/pages/questionnaire/questionnaire.jsp</result>
+			<result name="nairedetail">/WEB-INF/pages/questionnaire/questionnaire_detail.jsp</result>
+			<result name="search">/WEB-INF/pages/questionnaire/questionnaire_page_list.jsp</result>
+		</action>
+	</package>
+	
+	<package name="questionNaireAjax" extends="json-default">
+		<action name="*QuestionNaireAjaxAction" class="questionNaireAjaxAction" method="{1}">
+			<result type="json"></result>
+		</action>
+	</package>
+</struts>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.sino.elearning.msg.bean.EWebsiteMessage"
+		table="E_WEBSITE_MESSAGE">
+		<id name="id" type="java.lang.Long">
+			<column name="ID" precision="22" scale="0" />
+			<generator class="native" />
+		</id>
+		<property name="sendUsername" type="java.lang.String">
+			<column name="SEND_USERNAME" length="50" />
+		</property>
+		<property name="msgTitle" type="java.lang.String">
+			<column name="MSG_TITLE" length="200" />
+		</property>
+		<property name="msgContent" type="java.lang.String">
+			<column name="MSG_CONTENT" length="400" />
+		</property>
+		<property name="sendTime" type="java.lang.String">
+			<column name="SEND_TIME" length="30" />
+		</property>
+		<property name="status" type="java.lang.String">
+			<column name="STATUS" length="1" />
+		</property>
+	</class>
+
+</hibernate-mapping>

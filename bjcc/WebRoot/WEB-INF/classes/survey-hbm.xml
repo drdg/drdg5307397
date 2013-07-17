@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.sino.bjcc.survey.bean.Survey" table="SURVEY_SURVEY">
+        <id name="id" type="long">
+            <generator class="increment"/>
+        </id>
+        <property name="siteID"/>
+		<property name="name"/>
+		<property name="description"/>
+		<property name="startDate"/>
+		<property name="endDate"/>
+		<property name="status"/>
+		<property name="answerCount"/>
+		<property name="ipCount"/>
+		<property name="creationDate"/>
+		<property name="owner"/>
+		<property name="typeId"/>
+	</class>
+
+	<class name="com.sino.bjcc.survey.bean.Question" table="SURVEY_QUESTION">
+        <id name="ID" type="long">
+            <generator class="increment"/>
+        </id>
+		<property name="name"/>
+        <property name="surveyID"/>
+        <property name="sortID"/>
+		<property name="type"/>
+		<property name="required"/>
+		<property name="hasOther"/>
+		<property name="columns"/>
+		<property name="helpText"/>
+		<property name="options"/>
+		<property name="subTitles"/>
+	</class>
+
+	<class name="com.sino.bjcc.survey.bean.AnswerUser" table="SURVEY_ANSWERUSER">
+        <id name="ID" type="long">
+            <generator class="increment"/>
+        </id>
+        <property name="surveyID"/>
+        <property name="system"/>
+		<property name="browser"/>
+		<property name="ipAddress"/>
+		<property name="creationDate"/>
+	</class>
+
+	<class name="com.sino.bjcc.survey.bean.Answer" table="SURVEY_ANSWER">
+        <id name="ID" type="long">
+            <generator class="increment"/>
+        </id>
+        <property name="questionID"/>
+        <property name="userID"/>
+		<property name="answer"/>
+		<property name="other"/>
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+
+    <package name="msg" extends="struts2">
+		<!-- 站内短信 -->
+		<action name="addForward" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="addForward">
+			<result name="success">/WEB-INF/pages/message/head.jsp</result>
+		</action>
+		<!-- 发件箱 -->
+		<action name="sendForward" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="sendForward">
+			<result name="success">/WEB-INF/pages/message/sendBox.jsp</result>
+		</action>
+		<!-- 收件箱 -->
+		<action name="receiveForward" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="receiveForward">
+			<result name="success">/WEB-INF/pages/message/receiveBox.jsp</result>
+		</action>
+		<!-- 收件箱中未读信息 -->
+		<action name="unreadMessage" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="unreadMessage">
+			<result name="success">/WEB-INF/pages/message/receiveBox.jsp</result>
+		</action>
+		<!-- 写信 -->
+		<action name="writeForward" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="writeForward">
+			<result name="success">/WEB-INF/pages/message/writeMessage.jsp</result>
+		</action>
+		<!-- 保存站内短信 -->
+		<action name="saveMessage" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="saveMessage">
+			<result name="success" type="redirect">sendForward.action</result>
+			<result name="error">/WEB-INF/pages/message/error.jsp</result>
+		</action>
+		<!-- 逻辑删除一条发件箱短信 -->
+		<action name="delMessageById" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="delMessageById">
+			<result name="success" type="redirectAction">sendForward.action</result>
+		</action>
+		<!-- 逻辑批量删除发件箱短信 -->
+		<action name="delMessageByIds" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="delMessageByIds">
+			<result name="success" type="redirectAction">sendForward.action</result>
+		</action>
+		<!-- 删除一条收件箱短信 -->
+		<action name="delByReceiveId" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="delByReceiveId">
+			<result name="success" type="redirectAction">receiveForward.action</result>
+		</action>
+		<!-- 批量删除收件箱短信 -->
+		<action name="delByReceiveIds" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="delByReceiveIds">
+			<result name="success" type="redirectAction">receiveForward.action</result>
+		</action>
+		<!-- 回复短信 -->
+		<action name="replyMessage" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="replyMessage">
+			<result name="success">/WEB-INF/pages/message/reply.jsp</result>
+		</action>
+		<!-- 保存回复短信 -->
+		<action name="saveReplyMessage" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="saveReplyMessage">
+			<result name="success" type="redirect">sendForward.action</result>
+			<result name="error">/WEB-INF/pages/message/error.jsp</result>
+		</action>
+		<!-- 转发短信 -->
+		<action name="transferMessage" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="transferMessage">
+			<result name="success">/WEB-INF/pages/message/transfer.jsp</result>
+		</action>
+		<!-- 保存转发短信 -->
+		<action name="saveTransferMessage" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="saveTransferMessage">
+			<result name="success" type="redirect">sendForward.action</result>
+			<result name="error">/WEB-INF/pages/message/error.jsp</result>
+		</action>
+		<!-- 查询发件箱的详细信息 -->
+		<action name="detailWebMessage" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="detailWebMessage">
+			<result name="success">/WEB-INF/pages/message/sendBox_detail.jsp</result>
+		</action>
+		<!-- 查询收件箱的详细信息 -->
+		<action name="detailMessage" class="com.sino.elearning.msg.action.EWebsiteMessageAction" method="detailMessage">
+			<result name="success">/WEB-INF/pages/message/receiveBox_detail.jsp</result>
+		</action>
+    </package>
+    
+    <!-- 验证收信人是否在系统中存在 -->
+    <package name="jsonWebMess" extends="json-default">
+    	<action name="eWebsiteMessageJson" class="webMessageActionJson" method="executeJson">
+    		<result name="success" type="json"></result>
+    	</action>
+    </package>
+</struts> 

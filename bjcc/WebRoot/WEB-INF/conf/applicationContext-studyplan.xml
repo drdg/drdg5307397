@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns:aop="http://www.springframework.org/schema/aop" 
+         xmlns:tx="http://www.springframework.org/schema/tx" 
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"> 
+    <!-- 学习计划action -->
+    <bean id="studyPlanAction" class="com.sino.elearning.studyplan.action.EStudyPlanAction" scope="prototype">
+    	<property name="studyPlanService" ref="studyPlanService"></property>
+    </bean>
+    <bean id="studyPlanAjaxAction" class="com.sino.elearning.studyplan.action.EStudyPlanAjaxAction" scope="prototype">
+    	<property name="studyPlanService" ref="studyPlanService"></property>
+    </bean>
+    <!-- 学习计划service -->
+    <bean id="studyPlanService" class="com.sino.elearning.studyplan.service.impl.EStudyPlanServiceImpl">
+    	<property name="studyPlanDao" ref="studyPlanDao"></property>
+    </bean>
+    
+    <!-- 学习计划dao -->
+    <bean id="studyPlanDao" class="com.sino.elearning.studyplan.dao.impl.EStudyPlanDaoImpl" parent="daoBase"></bean>
+	
+</beans>

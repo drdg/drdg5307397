@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- 关键词表 -->
+<hibernate-mapping package="com.sino.bjcc.search.bean">
+	<class name="com.sino.bjcc.search.bean.SKeyCode" table="SINO_SEARCH_KEY">
+		<id name="keyId"  column="KEY_ID">
+			<generator class="increment"/> 
+		</id>
+		<property name="name" column="NAME" />
+		<property name="sync" column="SYNC" />
+		<property name="num" column="SORT" />
+		<property name="createTime" column="CREATE_TIME" />
+	</class>
+	<!-- 关键词信息表 -->
+	<class name="com.sino.bjcc.search.bean.SKeyDetail" table="SINO_SEARCH_KEY_DETAILS">
+		<id name="detailId" type="long" column="DETAIL_ID">
+			<generator class="increment"/> 
+		</id> 
+		<property name="searchTime" column="SERACH_TIME" />
+		<property name="name" column="NAME" />
+		<property name="keyId" column="KEY_ID" />
+	</class>
+</hibernate-mapping>

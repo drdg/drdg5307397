@@ -1,0 +1,29 @@
+/* CSS Document */
+body,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form{ margin:0; padding:0; font-size:14px;}
+body{font-family:Arial; margin:0; padding:0;}
+li{list-style:none}
+img{border:none}
+a{ text-decoration:none; color:#4b4b4b;}
+a:hover{ text-decoration:underline; color:#1062a3;}
+
+
+.ct_all{ width:998px; height:auto; margin:auto; border:#ef916d solid 1px; overflow:hidden; margin-top:10px;}
+.kp_left{ width:40px; height:auto; background-color:#ffd2a5; float:left; overflow:hidden;}
+.sl_tab{ width:33px; height:auto; float:right; position:relative; border-bottom:#8d2e2c solid 1px;}
+.sl_tab li{ width:28px; height:104px; text-align:center; display:inline;  font-size:14px; font-weight:bold;  line-height:18px;}
+.sl_tab a{ width:28px; height:104px; display:block; font-size:14px; color:#ffec8c; font-weight:bold; text-decoration:none; display:-moz-inline-box; display:inline-block; background-image:url(../images/tab01.jpg); padding:5px 0 0 5px; text-align:center;}
+.sl_tab .hover{ width:28px; height:110px; background-image:url(../images/tab02.jpg);font-size:14px; color:#329f15; font-weight:bold; vertical-align:middle; padding:32px 0 0 5px; text-align:center;}
+
+.sl_tab1{ width:33px; height:auto; float:right; position:relative; border-bottom:#8d2e2c solid 1px;}
+.sl_tab1 li{ width:28px; height:100px; text-align:center; display:inline;  font-size:14px; font-weight:bold; line-height:18px;}
+.sl_tab1 a{ width:28px; height:100px; display:block; font-size:14px; color:#ffec8c; font-weight:bold; text-decoration:none; display:-moz-inline-box; display:inline-block; background-image:url(../images/tab05.jpg); padding:20px 0 0 5px; text-align:center; }
+.sl_tab1 .hover{ width:28px; height:100px; background-image:url(../images/tab06.jpg);font-size:14px; color:#329f15; font-weight:bold; vertical-align:middle; padding:20px 0 0 5px; text-align:center;}
+
+.sl_tab0{ width:900px; height:auto; float:right; overflow:hidden; margin-top:10px;}
+.sl_tab0 ul{ margin:0; margin-top:5px; padding:0;}
+.sl_tab0 ul li{ width:136px; height:130px; line-height:22px; overflow:hidden; margin-top:5px; text-align:center; float:left; margin:5px 18px;}
+.sl_tab0 ul li img{ padding:2px; border:#ccc solid 1px;}
+
+
+.right_tt{ width:870px; height:18px; background-image:url(../images/img_bg.jpg); background-repeat:no-repeat; font-size:12px; padding:5px 15px;}
+.kp_right{ width:900px; height:auto; float:right; overflow:hidden;}

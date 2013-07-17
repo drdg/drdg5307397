@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sino.bjcc.online.bean">
+	<!-- 留言信息 -->
+	<class name="com.sino.bjcc.leaveMessage.bean.LeaveMessage" table="cms_leavemessage">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="long" column="ID">
+			<generator class="increment" />
+		</id>
+
+		<property name="userId" column="MSGUSERID" type="long" />
+		<property name="msgName" column="MSGNAME" type="string" />
+		<property name="typeId" column="TYPE_ID" type="long" />
+		<property name="title" column="TITLE" type="string" />
+		<property name="content" column="CONTENT" type="string" />
+		<property name="replyName" column="REPLYNAME" type="string" />
+		<property name="replyContent" column="REPLYCONTENT" type="string" />
+		<property name="createDate" column="CREATIONDATE" type="timestamp" />
+		<property name="replyDate" column="REPLYDATE" type="timestamp" />
+		<property name="status" column="STATUS" type="int" />
+		<property name="isAudit" column="ISAUDIT" type="int" />
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,348 @@
+#content {
+	WIDTH: 998px; BACKGROUND: #fff; border:1px solid #ef916d; font-size:12px; margin:auto;
+}
+img{border:0px;}
+.position {
+	LINE-HEIGHT: 26px; MARGIN: 0px; BACKGROUND: url(../images/line01.gif) repeat-x 0px bottom; COLOR: #333333; FONT-SIZE: 12px
+}
+.position A {
+	LINE-HEIGHT: 26px; COLOR: #333333; FONT-SIZE: 12px; TEXT-DECORATION: underline
+}
+.support {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 1px; MARGIN: 0px 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: url(../images/line01.gif) repeat-x 0px bottom; PADDING-TOP: 0px
+}
+.type {
+	MARGIN:0px; WIDTH: 98%; BACKGROUND: #fff
+}
+.vlist {
+	MARGIN:0px; WIDTH: 98%; BACKGROUND: #f35001
+}
+#ent {
+	 HEIGHT: 900px
+}
+#entlist {
+	BACKGROUND: url(../images/vlist-bg.gif) no-repeat 0px 0px; HEIGHT: 687px
+}
+#travel {
+	BACKGROUND: url(..../images/bg-cont02.png) no-repeat 0px 0px; HEIGHT: 359px
+}
+.type H2 {
+	POSITION: relative; PADDING-BOTTOM: 0px; LINE-HEIGHT: 36px; PADDING-LEFT: 28px; PADDING-RIGHT: 0px; HEIGHT: 32px; COLOR: #ffffff; FONT-SIZE: 14px; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+.type H2 .tip {
+	POSITION: absolute; LINE-HEIGHT: 20px; BOTTOM: 5px; FONT-SIZE: 12px; RIGHT: 10px; FONT-WEIGHT: normal
+}
+.type H2 .tip .title {
+	LINE-HEIGHT: 24px; COLOR: #f2d23d; FONT-SIZE: 13px
+}
+.type H2 .tip .title A {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; PADDING-LEFT: 7px; PADDING-RIGHT: 7px; COLOR: #ffffff; FONT-SIZE: 13px; PADDING-TOP: 0px
+}
+.type .wrap {
+	POSITION: relative; HEIGHT: 227px
+}
+.type .navmenu {
+	POSITION: absolute; WIDTH: 40px; BACKGROUND: url(../images/bg-menu.png) no-repeat 0px 0px; HEIGHT: 900px; TOP: 0px; LEFT: 0px; background-color:#ffd1a5;}
+.type .navmenu1 {
+	POSITION: absolute; WIDTH: 40px; BACKGROUND: url(../images/bg-menu_1.png) no-repeat 0px 0px; HEIGHT: 900px; TOP: 0px; LEFT: 0px; background-color:#ffd1a5;}
+
+.vlist H2 {
+	POSITION: relative; PADDING-BOTTOM: 0px; LINE-HEIGHT: 36px; PADDING-LEFT: 28px; PADDING-RIGHT: 0px; HEIGHT: 32px; COLOR: #ffffff; FONT-SIZE: 14px; OVERFLOW: hidden; PADDING-TOP: 0px
+}
+.vlist H2 .tip {
+	POSITION: absolute; LINE-HEIGHT: 20px; BOTTOM: 5px; FONT-SIZE: 12px; RIGHT: 10px; FONT-WEIGHT: normal
+}
+.vlist H2 .tip .title {
+	LINE-HEIGHT: 24px; COLOR: #f2d23d; FONT-SIZE: 13px
+}
+.vlist H2 .tip .title A {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; PADDING-LEFT: 7px; PADDING-RIGHT: 7px; COLOR: #ffffff; FONT-SIZE: 13px; PADDING-TOP: 0px
+}
+.vlist H2 .goback {
+	POSITION: absolute; LINE-HEIGHT: 20px; WIDTH: 134px; DISPLAY: block; HEIGHT: 26px; FONT-SIZE: 12px; TOP: 9px; FONT-WEIGHT: normal; LEFT: 35px
+}
+.vlist .wrap {
+	POSITION: relative
+}
+.vlist .navmenu {
+	POSITION: absolute; WIDTH: 40px; BACKGROUND: url(../images/bg-menu.png) no-repeat 0px 0px; HEIGHT: 304px; TOP: 13px; LEFT: 0px
+}
+#travel .navmenu {
+	BACKGROUND: url(../images/bg-menu.png) no-repeat 0px 0px
+}
+.navmenu UL {
+	MARGIN: 0px 0px 0px 16px; WIDTH: 16px; DISPLAY: inline; FLOAT: left
+}
+.navmenu LI {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 16px; PADDING-LEFT: 0px; WIDTH: 16px; PADDING-RIGHT: 0px; FLOAT: left; HEIGHT: 70px; COLOR: #fee66a; FONT-SIZE: 14px; FONT-WEIGHT: bold; PADDING-TOP: 26px
+}
+.navmenu LI SPAN {
+	WIDTH: 100%; DISPLAY: block; HEIGHT: 100%; CURSOR: pointer
+}
+.navmenu LI .on {
+	COLOR: #64920a
+}
+.navmenu LI.m01 {
+	HEIGHT: 60px
+}
+.navmenu LI.m02 {
+	HEIGHT: 80px
+}
+.navmenu LI.m03 {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; HEIGHT: 70px; PADDING-TOP: 5px
+}
+.subtype {
+	MARGIN: 8px 0px 8px 50px; WIDTH: 870px
+}
+.subtype .title {
+	POSITION: relative; BACKGROUND: url(../images/bg-subtitle.png) no-repeat 0px bottom; HEIGHT: 38px
+}
+.subtype .title .lk {
+	POSITION: absolute; BOTTOM: 3px; HEIGHT: 24px; LEFT: 0px
+}
+.subtype .title .morlink {
+	POSITION: absolute; BOTTOM: 3px; HEIGHT: 24px; RIGHT: 0px
+}
+.subtype .title .morlink A {
+	LINE-HEIGHT: 24px; COLOR: #333333
+}
+.subtype .title .sleft {
+	FLOAT: left; HEIGHT: 24px
+}
+.subtype .title .sright {
+	FLOAT: left; HEIGHT: 24px
+}
+.subtype .title .lk A {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; LINE-HEIGHT: 24px; PADDING-LEFT: 15px; WIDTH: 72px; PADDING-RIGHT: 0px; DISPLAY: inline-block; BACKGROUND: url(../images/bg-subtitleitem.png) no-repeat 0px 6px; HEIGHT: 24px; COLOR: #216da7; FONT-SIZE: 12px; OVERFLOW: hidden; FONT-WEIGHT: bold; PADDING-TOP: 0px
+}
+.subtype .title .lk A.last {
+	BORDER-RIGHT-STYLE: none; MARGIN: 0px 1px 0px 0px
+}
+.subtype .title .lk A.on {
+	COLOR: #ef800d
+}
+.subtype .c {
+	WIDTH: 900px;
+}
+.subtype .c .item {
+	MARGIN: 8px 4px 1px 3px; WIDTH: 140px; DISPLAY: inline; FLOAT: left
+}
+#travel .subtype .c {
+	MARGIN: 40px 0px 0px
+}
+#travel .subtype .c .item {
+	MARGIN: 8px 9px 1px 6px
+}
+.subtype .c .item .imgc {
+	BORDER-BOTTOM: #d3d3d3 1px solid; BORDER-LEFT: #d3d3d3 1px solid; WIDTH: 138px; BORDER-TOP: #d3d3d3 1px solid; BORDER-RIGHT: #d3d3d3 1px solid
+}
+.subtype .c .item .imgc IMG {
+	MARGIN: 4px; WIDTH: 130px; HEIGHT: 100px
+}
+.subtype .c .item .ac {
+	TEXT-ALIGN: center; LINE-HEIGHT: 22px; WIDTH: 140px; COLOR: #333; FONT-SIZE: 12px
+}
+.subtype .c .item .ac A {
+	LINE-HEIGHT: 22px; COLOR: #333
+}
+.subtypelist {
+	MARGIN: 8px 0px 8px 30px; WIDTH: 735px
+}
+.subtypelist .c {
+	WIDTH: 735px
+}
+.subtypelist .c .item {
+	MARGIN: 8px 4px 1px 3px; WIDTH: 140px; DISPLAY: inline; FLOAT: left
+}
+.subtypelist .c .item .imgc {
+	BORDER-BOTTOM: #d3d3d3 1px solid; BORDER-LEFT: #d3d3d3 1px solid; WIDTH: 138px; BORDER-TOP: #d3d3d3 1px solid; BORDER-RIGHT: #d3d3d3 1px solid
+}
+.subtypelist .c .item .imgc IMG {
+	MARGIN: 4px; WIDTH: 130px; HEIGHT: 100px
+}
+.subtypelist .c .item .ac {
+	TEXT-ALIGN: center; LINE-HEIGHT: 22px; WIDTH: 140px; COLOR: #333; FONT-SIZE: 12px
+}
+.subtypelist .c .item .ac A {
+	LINE-HEIGHT: 22px; COLOR: #333
+}
+#travel .item2 {
+	MARGIN: 3px 12px 13px 15px; WIDTH: 120px; DISPLAY: inline; FLOAT: left
+}
+#travel .item2 .imgc {
+	BORDER-BOTTOM: #d3d3d3 1px solid; BORDER-LEFT: #d3d3d3 1px solid; WIDTH: 118px; BORDER-TOP: #d3d3d3 1px solid; BORDER-RIGHT: #d3d3d3 1px solid
+}
+#travel .item2 .imgc IMG {
+	MARGIN: 4px; WIDTH: 110px; HEIGHT: 82px
+}
+#travel .item2 .ac {
+	TEXT-ALIGN: center; LINE-HEIGHT: 22px; WIDTH: 120px; COLOR: #333; FONT-SIZE: 12px
+}
+#travel .item2 .ac A {
+	LINE-HEIGHT: 22px; COLOR: #333
+}
+.subtype .c .vstyle01 {
+	MARGIN: 0px; HEIGHT: 251px
+}
+.subtype .c .vstyle01 .f12 {
+	WIDTH: 778px; DISPLAY: inline; FLOAT: left; HEIGHT: 240px; OVERFLOW: hidden
+}
+.subtype .c .vstyle01 .f1 {
+	MARGIN: 0px 5px; WIDTH: 190px; DISPLAY: inline; FLOAT: left
+}
+.subtype .c .vstyle01 .f1 .imgc {
+	MARGIN: 0px 0px 6px
+}
+.subtype .c .vstyle01 .f1 .imgc IMG {
+	BORDER-BOTTOM: #dfe2e1 3px solid; BORDER-LEFT: #dfe2e1 3px solid; BORDER-TOP: #dfe2e1 3px solid; BORDER-RIGHT: #dfe2e1 3px solid
+}
+.subtype .c .vstyle01 .f1 .parac H3 {
+	TEXT-ALIGN: center
+}
+.subtype .c .vstyle01 .f1 .parac H3 A {
+	LINE-HEIGHT: 24px; COLOR: #333333; FONT-SIZE: 12px
+}
+.subtype .c .vstyle01 .f1 .parac P {
+	LINE-HEIGHT: 20px; TEXT-INDENT: 24px; MARGIN: 0px 6px; COLOR: #999999; FONT-SIZE: 12px
+}
+.subtype .c .vstyle01 .f2 {
+	MARGIN: 0px 2px; WIDTH: 566px; DISPLAY: inline; FLOAT: left
+}
+.subtype .c .vstyle01 .f2 .ftop {
+	
+}
+.subtype .c .vstyle01 .f2 .ftop .fitem {
+	TEXT-ALIGN: center; MARGIN: 0px 0px 0px 7px; WIDTH: 128px; DISPLAY: inline; FLOAT: left; HEIGHT: 115px
+}
+.subtype .c .vstyle01 .f2 .ftop .fitem .imgc {
+	MARGIN: 0px 0px 6px
+}
+.subtype .c .vstyle01 .f2 .ftop .fitem .imgc IMG {
+	BORDER-BOTTOM: #d3d3d3 1px solid; BORDER-LEFT: #d3d3d3 1px solid; BORDER-TOP: #d3d3d3 1px solid; BORDER-RIGHT: #d3d3d3 1px solid
+}
+.subtype .c .vstyle01 .f2 .ftop .fitem .ac A {
+	LINE-HEIGHT: 24px; COLOR: #333333; FONT-SIZE: 12px
+}
+.subtype .c .vstyle01 .f2 .fbottom {
+	PADDING-BOTTOM: 6px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: url(../images/line01.gif) repeat-x 0px 0px; PADDING-TOP: 6px
+}
+.subtype .c .vstyle01 .f2 .fbottom LI {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 21px; MARGIN: 0px 0px 0px 6px; PADDING-LEFT: 10px; PADDING-RIGHT: 0px; BACKGROUND: url(../images/icon01.gif) no-repeat 0px 9px; HEIGHT: 21px; PADDING-TOP: 0px
+}
+.subtype .c .vstyle01 .f2 .fbottom LI A {
+	LINE-HEIGHT: 21px; COLOR: #333333; FONT-SIZE: 12px
+}
+.subtype .c .vstyle01 .f3 {
+	MARGIN: 0px 0px 0px 2px; WIDTH: 170px; DISPLAY: inline; FLOAT: left
+}
+.subtype .c .vstyle01 .f3 .towntitle {
+	TEXT-ALIGN: center; LINE-HEIGHT: 22px; BACKGROUND: #bfdcec; HEIGHT: 22px; COLOR: #4a9adf; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.subtype .c .vstyle01 .f3 .townlist {
+	BACKGROUND: #e6f2f8; HEIGHT: 218px
+}
+.subtype .c .vstyle01 .f3 .townlist LI {
+	TEXT-ALIGN: center; WIDTH: 55px; FLOAT: left
+}
+.subtype .c .vstyle01 .f3 .townlist LI A {
+	LINE-HEIGHT: 24px; COLOR: #73706e; FONT-SIZE: 12px
+}
+.subtype .c .vstyle01 .f3 .townlist LI A.on {
+	COLOR: #ff3c00
+}
+.article {
+	MARGIN: 10px 0px 30px
+}
+.article H1 {
+	TEXT-ALIGN: center; LINE-HEIGHT: 36px; MARGIN: 0px 10px; FONT-FAMILY: ºÚÌå; HEIGHT: 34px; COLOR: #333333; FONT-SIZE: 20px; FONT-WEIGHT: normal
+}
+.article .articleinfo {
+	TEXT-ALIGN: center; PADDING-BOTTOM: 10px; MARGIN: 0px 10px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND: url(../images/line02.gif) repeat-x 0px bottom; COLOR: #999999; FONT-SIZE: 12px; PADDING-TOP: 0px
+}
+.article .articlecontent {
+	BORDER-BOTTOM: #cdcdcd 1px solid; BORDER-LEFT: #cdcdcd 1px solid; PADDING-BOTTOM: 15px; LINE-HEIGHT: 23px; MARGIN: 8px 15px 0px; MIN-HEIGHT: 400px; PADDING-LEFT: 50px; WIDTH: 668px; PADDING-RIGHT: 50px; FONT-SIZE: 14px; BORDER-TOP: #cdcdcd 1px solid; BORDER-RIGHT: #cdcdcd 1px solid; PADDING-TOP: 15px
+}
+.article .articlecontent P {
+	MARGIN: 8px 0px; FONT-SIZE: 14px
+}
+.vedio {
+	MARGIN: 10px 0px 0px
+}
+.vedio .play {
+	MARGIN: 0px 0px 0px 6px; WIDTH: 555px; DISPLAY: inline; BACKGROUND: url(../images/vedio-play-bg.gif) no-repeat 0px 0px; FLOAT: left; HEIGHT: 537px
+}
+.vedio .play #player {
+	MARGIN: 6px 0px 0px 6px; WIDTH: 542px; HEIGHT: 531px
+}
+.vedio .minfo {
+	BORDER-BOTTOM: #cecece 1px solid; BORDER-LEFT: #cecece 1px solid; LINE-HEIGHT: 23px; MARGIN: 0px 0px 0px 6px; WIDTH: 224px; DISPLAY: inline; FLOAT: left; HEIGHT: 537px; FONT-SIZE: 12px; BORDER-TOP: #cecece 1px solid; BORDER-RIGHT: #cecece 1px solid
+}
+.vedio .minfo TABLE {
+	MARGIN: 8px 0px 0px
+}
+.vedio .minfo TABLE TD {
+	VERTICAL-ALIGN: top
+}
+.vedio .minfo .vtitle {
+	TEXT-ALIGN: center; LINE-HEIGHT: 23px; MARGIN: 1px; BACKGROUND: url(../images/vedio-title-bg.gif) repeat-x 0px 0px; HEIGHT: 23px; COLOR: #ffd300; FONT-SIZE: 13px; FONT-WEIGHT: bold
+}
+.vedio .minfo .vimg {
+	BORDER-BOTTOM: #cecece 1px solid; BORDER-LEFT: #cecece 1px solid; BORDER-TOP: #cecece 1px solid; BORDER-RIGHT: #cecece 1px solid
+}
+.vedio .minfo .vintro {
+	LINE-HEIGHT: 20px; MARGIN: 8px 10px 0px; BACKGROUND: url(../images/line02.gif) repeat-x 0px 0px
+}
+.vedio .minfo .vintro .t {
+	LINE-HEIGHT: 26px; FONT-SIZE: 12px
+}
+.article .articlecontent P {
+	MARGIN: 8px 70px
+}
+.pages .pageOutput {
+	
+}
+.pages .pageNum {
+	
+}
+.pages {
+	BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: right; PADDING-BOTTOM: 0px; LINE-HEIGHT: 46px; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; BORDER-TOP-STYLE: none; COLOR: #000; FONT-SIZE: 12px; BORDER-LEFT-STYLE: none; PADDING-TOP: 0px
+}
+TABLE TD.pages {
+	BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: right; PADDING-BOTTOM: 0px; LINE-HEIGHT: 46px; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; BORDER-TOP-STYLE: none; COLOR: #000; FONT-SIZE: 12px; BORDER-LEFT-STYLE: none; PADDING-TOP: 0px
+}
+#PageTable TD {
+	BORDER-BOTTOM-STYLE: none; TEXT-ALIGN: right; PADDING-BOTTOM: 0px; LINE-HEIGHT: 46px; BORDER-RIGHT-STYLE: none; PADDING-LEFT: 0px; PADDING-RIGHT: 10px; BORDER-TOP-STYLE: none; COLOR: #000; FONT-SIZE: 12px; BORDER-LEFT-STYLE: none; PADDING-TOP: 0px
+}
+.pages .turnpage {
+	LINE-HEIGHT: 14px; MARGIN: 0px 4px; WIDTH: 24px; HEIGHT: 14px; VERTICAL-ALIGN: middle
+}
+.pages .input {
+	LINE-HEIGHT: 14px; MARGIN: 0px 4px; WIDTH: 24px; HEIGHT: 14px; VERTICAL-ALIGN: middle
+}
+.pages .button {
+	LINE-HEIGHT: 18px; MARGIN: 0px 4px; WIDTH: 50px; HEIGHT: 22px; VERTICAL-ALIGN: middle
+}
+.pages .pageOutput A {
+	PADDING-BOTTOM: 0px; LINE-HEIGHT: 36px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; COLOR: #000; FONT-SIZE: 12px; PADDING-TOP: 0px
+}
+.sresult .pages {
+	TEXT-ALIGN: left; PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 0px; PADDING-TOP: 0px
+}
+.sresult .pages A {
+	PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 3px; PADDING-TOP: 0px
+}
+.stylepages {
+	LINE-HEIGHT: 20px; MARGIN: 8px 0px; HEIGHT: 24px; COLOR: #999
+}
+.stylepages A {
+	BORDER-BOTTOM: #ddd 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 18px; MARGIN: 0px 2px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; DISPLAY: inline-block; FLOAT: left; HEIGHT: 18px; COLOR: #000; FONT-SIZE: 11px; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+.stylepages .cpb {
+	BORDER-BOTTOM: #ddd 1px solid; TEXT-ALIGN: center; BORDER-LEFT: #ddd 1px solid; PADDING-BOTTOM: 0px; LINE-HEIGHT: 18px; MARGIN: 0px 2px; PADDING-LEFT: 5px; PADDING-RIGHT: 5px; DISPLAY: inline-block; FLOAT: left; HEIGHT: 18px; COLOR: #000; FONT-SIZE: 11px; BORDER-TOP: #ddd 1px solid; BORDER-RIGHT: #ddd 1px solid; TEXT-DECORATION: none; PADDING-TOP: 0px
+}
+.stylepages A:hover {
+	BORDER-BOTTOM: #e61636 1px solid; BORDER-LEFT: #e61636 1px solid; BACKGROUND-COLOR: #e61636; COLOR: #fff; BORDER-TOP: #e61636 1px solid; BORDER-RIGHT: #e61636 1px solid; TEXT-DECORATION: none
+}
+.stylepages .cpb {
+	BORDER-BOTTOM: #e61636 1px solid; BORDER-LEFT: #e61636 1px solid; BACKGROUND: #e61636; COLOR: #fff; BORDER-TOP: #e61636 1px solid; FONT-WEIGHT: bold; BORDER-RIGHT: #e61636 1px solid
+}

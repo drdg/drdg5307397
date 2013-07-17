@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+
+	<!-- ajax请求获取图文直播详情的Action -->
+	<bean id="jsonTuwenLiveAction"
+		class="com.sino.bjcc.tuwenLive.action.TuwenLiveActionJson"
+		scope="prototype">
+		<property name="liveManager" ref="liveManager"></property>
+	</bean>
+	<!-- 评论 -->
+	<bean id="discussAction"
+		class="com.sino.bjcc.discuss.action.DiscussAction"
+		scope="prototype">
+		<property name="discussService" ref="discussService"></property>
+	</bean>
+	<bean id="discussService"
+		class="com.sino.bjcc.discuss.service.DiscussService">
+		<property name="discussDao" ref="discussDao"></property>
+	</bean>
+	<bean id="discussDao"
+		class="com.sino.bjcc.discuss.dao.DiscussDao" parent="daoBase">
+	</bean>
+	<!-- 长城热词 -->
+	<bean id="hotCodeAction"
+		class="com.sino.bjcc.hotCode.action.HotCodeAction"
+		scope="prototype">
+		<property name="hotCodeService" ref="hotCodeService"></property>
+	</bean>
+	<bean id="hotCodeService"
+		class="com.sino.bjcc.hotCode.service.impl.HotCodeService">
+		<property name="hotCodeDao" ref="hotCodeDao"></property>
+	</bean>
+	<bean id="hotCodeDao"
+		class="com.sino.bjcc.hotCode.dao.impl.HotCodeDao" parent="daoBase">
+	</bean>
+	<!-- Program -->
+	<bean id="programAction"
+		class="com.sino.bjcc.media.action.ProgramAction" scope="prototype">
+		<property name="programService" ref="programService"></property>
+		<property name="itemService" ref="itemService"></property>
+	</bean>
+	<bean id="programService"
+		class="com.sino.bjcc.media.service.impl.ProgramService">
+		<property name="programDao" ref="programDao"></property>
+	</bean>
+	<bean id="programDao"
+		class="com.sino.bjcc.media.dao.impl.ProgramDao" parent="daoBase">
+	</bean>
+
+	<!-- ListBoxItem -->
+	<bean id="itemService"
+		class="com.sino.bjcc.media.service.impl.ListBoxItemService">
+		<property name="itemDao" ref="itemDao"></property>
+	</bean>
+	<bean id="itemDao"
+		class="com.sino.bjcc.media.dao.impl.ListBoxItemDao"
+		parent="daoBase">
+	</bean>
+
+	<!-- 获取图文直播详情的Action -->
+	<bean id="tuwenLiveAction"
+		class="com.sino.bjcc.tuwenLive.action.TuwenLiveAction"
+		scope="prototype">
+		<property name="liveManager" ref="liveManager"></property>
+	</bean>
+	<!-- 图文直播详情的Manager -->
+	<bean id="liveManager"
+		class="com.sino.bjcc.tuwenLive.service.impl.TuwenLiveServiceImpl"
+		scope="prototype">
+		<property name="liveDao" ref="liveDao"></property>
+	</bean>
+
+
+	<!-- 图文直播详情的Dao -->
+	<bean id="liveDao"
+		class="com.sino.bjcc.tuwenLive.persistence.impl.TuwenLiveDaoImpl"
+		scope="prototype" parent="daoBase">
+	</bean>
+
+	<!-- 区县排行Action -->
+	<bean id="quxianRankAction"
+		class="com.sino.bjcc.quxianRank.action.QuxianRankAction"
+		scope="prototype">
+		<property name="quxianList" ref="quxianRankManager"></property>
+	</bean>
+	<!-- 区县排行Manager -->
+	<bean id="quxianRankManager"
+		class="com.sino.bjcc.quxianRank.service.impl.QuxianRankServiceImpl"
+		scope="prototype">
+		<property name="rankDao" ref="quxianRankDao"></property>
+	</bean>
+	<!-- 区县排行Dao -->
+	<bean id="quxianRankDao"
+		class="com.sino.bjcc.quxianRank.persistence.impl.RankDaoImpl"
+		scope="prototype" parent="daoBase">
+	</bean>
+	<!-- 课程排行Action -->
+	<bean id="videoRankAction"
+		class="com.sino.bjcc.videoRank.action.VideoRankAction"
+		scope="prototype">
+		<property name="videoRankService" ref="videoRankManager"></property>
+	</bean>
+	<!-- 课程排行Manager -->
+	<bean id="videoRankManager"
+		class="com.sino.bjcc.videoRank.service.impl.VideoRankServiceImpl"
+		scope="prototype">
+		<property name="videoRankDao" ref="videoRankDao"></property>
+	</bean>
+	<!-- 课程排行Dao -->
+	<bean id="videoRankDao"
+		class="com.sino.bjcc.videoRank.persistence.impl.VideoRankDaoImpl"
+		scope="prototype" parent="daoBase">
+	</bean>
+
+	<!-- 课程预告Action -->
+	<bean id="timeTableAction"
+		class="com.sino.bjcc.timetable.action.TimeTableAction"
+		scope="prototype">
+		<property name="timeTableService" ref="timeTableService"></property>
+	</bean>
+	<!-- 课程预告Manager -->
+	<bean id="timeTableService"
+		class="com.sino.bjcc.timetable.service.impl.TimeTableServiceImpl"
+		scope="prototype">
+		<property name="timeTableDao" ref="timeTableDao"></property>
+	</bean>
+	<!-- 课程预告Dao -->
+	<bean id="timeTableDao"
+		class="com.sino.bjcc.timetable.persistence.impl.TimeTableDaoImpl"
+		scope="prototype" parent="daoBase">
+	</bean>
+	<!--到记录用户观看视频信息的action -->
+	<bean id="gotoPlayAction" class="com.sino.bjcc.online.action.GotoPlayAction" scope="prototype">
+		<property name="onlineManager" ref="onlineManager"></property>
+	</bean>
+	<!--在线用户统计Action -->
+	<bean id="onlineAction"
+		class="com.sino.bjcc.online.action.PlayUserOnlineJsonAction"
+		scope="prototype">
+		<property name="dianboManager" ref="onlineManager"></property>
+	</bean>
+	<!--在线用户统计Manager -->
+	<bean id="onlineManager"
+		class="com.sino.bjcc.online.service.impl.PlayUserOnlineServiceImpl"
+		scope="prototype">
+		<property name="onlineDao" ref="onlineDao"></property>
+	</bean>
+	<!--在线用户统计Dao -->
+	<bean id="onlineDao"
+		class="com.sino.bjcc.online.persistence.impl.PlayUserOnlineDaoImpl"
+		scope="prototype" parent="daoBase">
+	</bean>
+
+	<!-- 用户行为记录 -->
+	<!--  -->
+	<bean id="userBehaviorAction" class="com.sino.bjcc.userBehavior.action.UserBehaviorAction" scope="prototype">
+		<property name="userBehaviorService"
+			ref="userBehaviorService">
+		</property>
+	</bean>
+	<bean id="writeBehaviorAction" class="com.sino.bjcc.userBehavior.action.WriteBehaviorAction" scope="prototype">
+		<property name="userBehaviorService" ref="userBehaviorService">
+		</property>
+	</bean>
+	<bean id="userBehaviorService"
+		class="com.sino.bjcc.userBehavior.service.impl.UserBehaviorServiceImpl"
+		scope="prototype">
+		<property name="userBehaviorDao" ref="userBehaviorDao"></property>
+	</bean>
+	<bean id="userBehaviorDao"
+		class="com.sino.bjcc.userBehavior.dao.impl.UserBehaviorDaoImpl"
+		scope="prototype" parent="daoBase">
+	</bean>
+	<!-- end -->
+
+	<!-- 站内短信管理 -->
+	<!-- 
+		Action
+	-->
+	<bean id="websiteMessageAction"
+		class="com.sino.elearning.msg.action.EWebsiteMessageAction"
+		scope="prototype">
+		<property name="websiteMessageService"
+			ref="websiteMessageService">
+		</property>
+	</bean>
+
+	<bean id="webMessageActionJson"
+		class="com.sino.elearning.msg.action.EWebMessageActionJson"
+		scope="prototype">
+		<property name="websiteMessageService"
+			ref="websiteMessageService"></property>
+			
+	</bean>
+	<!-- 
+		Service
+	-->
+	<bean id="websiteMessageService"
+		class="com.sino.elearning.msg.service.impl.EWebsiteMessageServiceImpl">
+		<property name="websiteMessageDao" ref="websiteMessageDao" />
+		<property name="receiveMessageDao" ref="receiveMessageDao" />
+	</bean>
+	
+	<!-- 
+		Dao
+	-->
+	<bean id="websiteMessageDao"
+		class="com.sino.elearning.msg.dao.impl.EWebsiteMessageDaoImpl"
+		parent="daoBase">
+	</bean>
+	<bean id="receiveMessageDao"
+		class="com.sino.elearning.msg.dao.impl.EReceiveMessageDaoImpl"
+		parent="daoBase">
+	</bean>
+	<!-- 用户个人学习需求 -->
+	<!-- 
+		Action
+	 -->
+	 <bean id="resourceAction"
+		class="com.sino.elearning.learningneed.Action.EResourceAdviceAction"
+		scope="prototype">
+		<property name="resourceService" ref="resourceService">
+		</property>
+	</bean>
+	<!-- 
+		Service
+	-->
+	<bean id="resourceService"
+		class="com.sino.elearning.learningneed.service.Impl.EResourceAdviceService">
+		<property name="resourceDao" ref="resourceDao"/>
+	</bean>
+	<!-- 
+		Dao
+	-->
+	<bean id="resourceDao"
+		class="com.sino.elearning.learningneed.Dao.Impl.EResourceAdviceDAO"
+		parent="daoBase">
+	</bean>
+	<!-- 用户学习记录 -->
+	<!-- Action -->
+	<bean id="behaviorAction"
+		class="com.sino.elearning.studyrecord.Action.BehaviorAction"
+		scope="prototype">
+		<property name="recordService" ref="recordService">
+		</property>
+	</bean>
+	<!-- 
+		Service
+	-->
+	<bean id="recordService"
+		class="com.sino.elearning.studyrecord.service.Impl.RecordServiceImpl">
+		<property name="recordDao" ref="recordDao"/>
+	</bean>
+	<!-- 
+		Dao
+	-->
+	<bean id="recordDao"
+		class="com.sino.elearning.studyrecord.Dao.Impl.RecordDaoImpl"
+		parent="daoBase">
+	</bean>
+	<!-- 用户学习成效 -->
+	<!-- 
+	Action
+	 -->
+	 <bean id="eResultRecordAcion"
+		class="com.sino.elearning.studyrecord.Action.EResultRecordAction"
+		scope="prototype">
+		<property name="resultService" ref="resultService"></property>
+	</bean>
+	<!-- 
+		Service
+	-->
+	<bean id="resultService"
+		class="com.sino.elearning.studyrecord.service.Impl.ResultRecordServiceImpl">
+		<property name="resultDao" ref="resultDao"/>
+	</bean>
+	<!-- 
+		Dao
+	-->
+	<bean id="resultDao"
+		class="com.sino.elearning.studyrecord.Dao.Impl.EResultRecordDaoImpl"
+		parent="daoBase">
+	</bean>
+	<!-- 用户评测试卷 -->
+	<!-- 
+	Action
+	 -->
+	 <bean id="evaluationAction"
+		class="com.sino.elearning.studyrecord.Action.EvaluationAction"
+		scope="prototype">
+		<property name="testService" ref="testService"></property>
+	</bean>
+	<!-- 
+		Service
+	-->
+	<bean id="testService"
+		class="com.sino.elearning.studyrecord.service.Impl.TestServiceImpl">
+		<property name="testDao" ref="testDao"/>
+		<property name="questionDao" ref="questionDao"/>
+		<property name="optionDao" ref="optionDao"/>
+	</bean>
+	<!-- 
+		Dao
+	-->
+	<bean id="testDao"
+		class="com.sino.elearning.studyrecord.Dao.Impl.EvaluationTestDaoImpl"
+		parent="daoBase">
+	</bean>
+	<bean id="questionDao"
+		class="com.sino.elearning.studyrecord.Dao.Impl.TestQuestionDaoIpml"
+		parent="daoBase">
+	</bean>
+	<bean id="optionDao"
+		class="com.sino.elearning.studyrecord.Dao.Impl.TestQuestionOPtionDaoImpl"
+		parent="daoBase">
+	</bean>
+	
+	<!-- 留言信息的Action -->
+	<bean id="leaveMessageAction"
+		class="com.sino.bjcc.leaveMessage.action.LeaveMessageAction"
+		scope="prototype">
+		<property name="messageManager" ref="messageManager"></property>
+	</bean>
+	<!-- 留言信息的Manager -->
+	<bean id="messageManager"
+		class="com.sino.bjcc.leaveMessage.service.impl.LeaveMessageServiceImpl"
+		scope="prototype">
+		<property name="leaveMessageDao" ref="leaveMessageDao"></property>
+	</bean>
+	<!-- 留言信息的Dao -->
+	<bean id="leaveMessageDao"
+		class="com.sino.bjcc.leaveMessage.persistence.impl.LeaveMessageDaoImpl"
+		scope="prototype" parent="daoBase">
+	</bean>
+	
+	<!-- 调查问卷的Action -->
+	<bean id="surveyAction"
+		class="com.sino.bjcc.survey.action.SurveyAction"
+		scope="prototype">
+		<property name="srveyManager" ref="surveyManager"></property>
+	</bean>
+	<!-- 调查问卷的Manager -->
+	<bean id="surveyManager"
+		class="com.sino.bjcc.survey.service.impl.SurveyServiceImpl"
+		scope="prototype">
+		<property name="surveyDao" ref="surveyDao"></property>
+	</bean>
+	<!-- 调查问卷的Dao -->
+	<bean id="surveyDao"
+		class="com.sino.bjcc.survey.persistence.impl.SurveyDaoImpl"
+		scope="prototype" parent="daoBase">
+	</bean>
+	
+	<!-- 访问日志的Action -->
+	<bean id="visitLogAction"
+		class="com.sino.bjcc.visitLog.action.VisitLogAction"
+		scope="prototype">
+		<property name="visitLogManager" ref="visitLogManager"></property>
+	</bean>
+	<!-- 访问日志的Manager -->
+	<bean id="visitLogManager"
+		class="com.sino.bjcc.visitLog.service.impl.VisitLogServiceImpl"
+		scope="prototype">
+		<property name="visitLogDao" ref="visitLogDao"></property>
+	</bean>
+	<!-- 访问日志的Dao -->
+	<bean id="visitLogDao"
+		class="com.sino.bjcc.visitLog.persistence.impl.VisitLogDaoImpl"
+		scope="prototype" parent="daoBase">
+	</bean>
+	
+	<!-- 推荐视频的Action -->
+	<bean id="newVideoAction"
+		class="com.sino.bjcc.videoRecommend.action.VideoRecommendAction"
+		scope="prototype">
+		<property name="newVideoManager" ref="newVideoManager"></property>
+	</bean>
+	<!-- 推荐视频的Manager -->
+	<bean id="newVideoManager"
+		class="com.sino.bjcc.videoRecommend.service.impl.VideoRecommendServiceImpl"
+		scope="prototype">
+		<property name="videoRecommendDao" ref="newVideoDao"></property>
+	</bean>
+	<!-- 推荐视频的Dao -->
+	<bean id="newVideoDao"
+		class="com.sino.bjcc.videoRecommend.persistence.impl.VideoRecommendDaoImpl"
+		scope="prototype" parent="daoBase">
+	</bean>
+
+	<!-- 全文检索的Action -->
+	<bean id="searchAction" class="com.sino.bjcc.search.action.SearchAction" scope="prototype">
+		<property name="searchManager" ref="searchManager"></property>
+	</bean>
+	<!-- 全文检索的Manager -->
+	<bean id="searchManager" class="com.sino.bjcc.search.service.impl.SearchServiceImpl" scope="prototype">
+		<property name="searchDao" ref="searchDao"></property>
+	</bean>
+	<!-- 全文检索的Dao -->
+	<bean id="searchDao" class="com.sino.bjcc.search.persistence.impl.SearchDaoImpl" scope="prototype" parent="daoBase">
+	</bean>
+</beans>

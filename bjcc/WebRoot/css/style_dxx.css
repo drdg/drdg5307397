@@ -1,0 +1,41 @@
+/* CSS Document */
+html,body,div,span,iframe,h1,h2,h3,h4,h5,h6,p,a,em,font,img,dd,dl,dt,li,ol,ul,fieldset,form,label,table,tr,th,td{
+	margin:0;padding:0;border:0;font-size:12px;font-family:arial,Simsun,"宋体"; list-style-type:none;
+}
+ul,li{ list-style: none; }
+a{ text-decoration:none; color:#333333; }
+
+.dxxk{ width:773px; height:457px; margin:0 auto; border:1px solid #4c4c4c; padding:2px;}
+.dxxkl{width:771px; height:455px; border:1px solid #f9d986; }
+.dxxqh{ height:26px; width:764px; background:url(../images/dxxbgt.gif) repeat-x; padding:5px 0 0 7px;}
+.dxxqh li{float:left;}
+.dxxqh li a{display:block; width:68px; height:19px; border:1px solid #fad38e; border-bottom:none;background:url(images/dxxbgqh.jpg) repeat-x;   margin-left:2px; font-size:14px; font-weight:bold; color:#ae4302; padding-top:6px; text-align:center; }
+.dxxqh .hover{background:#FFFFFF;}
+.dxxsjx{width:755px; height:410px; padding:16px 0 0 14px;}
+.dxxnr{width:739px; height:313px; border:1px solid #ffe3b0; border-top:none;overflow:hidden;overflow:auto; color:#797979}
+.dxxnr a{color:#525252; text-decoration:none;}
+.dban{width:740px; height:49px; padding:8px 0 0 5px;}
+.ann{background:url(../images/annbg.gif) no-repeat; width:79px; height:19px; color:#FFF; display:block; text-align:center; padding-top:7px; float:left;}
+
+
+.dxxsjx1{width:753px; height:393px; padding:31px 0 0 19px; color:#797979;}
+.srk{width:170px; height:18px; border:#999999 1px solid;}
+.lja{width:646px; height:28px; line-height:28px;}
+.lja a{ float:right;}
+.dban1{width:488px; height:26px; padding:10px 0 0 264px;}
+.ann1{ background:url(../images/an.jpg) no-repeat; display:block;width:67px; height:19px; color:#FFF; text-align:center; padding-top:7px; float:left;}
+.xhx{color:#525252; text-decoration:none;}
+.yjxx{width:702px; height:367px; line-height:25px; padding:17px 36px 0 11px; font-size:14px; overflow:hidden;overflow:auto;}
+
+.xx_cll{ width:335px; height:103px; margin:0 auto; padding:1px 1px 0 1px;}
+.xx_clk{width:335px; height:103px; border:1px solid #fad38e;}
+.xx_clk h4{ font-weight:100; color:#ae4302; width:319px; height:21px; background:url(images/cljbg.jpg) repeat-x; padding:10px 0 0 14px; margin-left:1px;}
+.dizhi{ width:333px; height:46px; text-align:center; padding-top:24px;}
+.hufk{width:726px; height:353px; border:1px solid #f3e2c6; padding:16px 0 0 11px; background:#fffdf9;}
+.fxnr{width:714px; height:131px; border-bottom:1px solid #f3e2c6}
+.fxxx{width:697px; height:108px; padding-top:11px; line-height:25px;}
+.nrxx{float:left; width:645px;height:105px; overflow:hidden;overflow:auto;}
+
+.dxxsjx2{width:756px; height:418px; padding:6px 0 0 16px; color:#797979;}
+.tsxx{width:714px; height:39px; color:#cd0005; text-align:center; padding-top:13px;}
+.dban2{width:719px; height:36px; padding:11px 0 0 7px;}

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns:aop="http://www.springframework.org/schema/aop" 
+         xmlns:tx="http://www.springframework.org/schema/tx" 
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"> 
+    <!-- 验证用户信息action -->
+    <bean id="loginAction" class="com.sino.login.action.LoginAction">
+    	<property name="userInfoService" ref="userInfoService"></property>
+    </bean>
+    <!-- 验证用户信息service -->
+    <bean id="userInfoService" class="com.sino.login.service.impl.UserInfoServiceImpl">
+    	<property name="userInfoDao" ref="userInfoDao"></property>
+    </bean>
+    <!-- 验证用户信息dao -->
+    <bean id="userInfoDao" class="com.sino.login.dao.impl.UserInfoDaoImpl" parent="daoBase"/>
+    <!-- 常量配置信息dao -->
+    <bean id="constantConfigureDao" class="com.sino.system.constant.dao.impl.ConstantConfigureDaoImpl" parent="daoBase"/>
+    
+</beans>

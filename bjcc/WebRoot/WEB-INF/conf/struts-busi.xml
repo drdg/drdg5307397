@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="" extends="struts2"> 
+    	
+		<!-- 长城热词 -->
+    	<action name="hotCodeList" class="com.sino.bjcc.hotCode.action.HotCodeAction"
+			method="getList">
+			<result name="list">/WEB-INF/pages/hotCode/hotCode.jsp</result>
+		</action>
+		<!-- 文章评论 -->
+    	<action name="discussAction" class="discussAction" method="discuss">
+			<result name="success">/WEB-INF/pages/discuss/discuss2.jsp</result>
+		</action>
+		<!-- 新建评论 -->
+		<action name="createDiscuss" class="discussAction" method="createDiscuss">
+			<result name="login">/WEB-INF/pages/discuss/discuss2.jsp</result>
+			<result name="success" type="redirectAction">discussAction.action?articleID=${articleID}&amp;type=${type}&amp;siteId=${siteId}&amp;success=${success}</result>
+		</action>
+		<!-- 视频搜索 -->
+		<action name="programAction" class="programAction" method="getCon">
+			<result name="program">/WEB-INF/pages/program/program.jsp</result>
+			<result name="slectCourseList">/WEB-INF/pages/studyplan/programlist.jsp</result>
+		</action>
+		<!-- 视频列表 -->
+		<action name="videoList" class="videoRankAction" method="videoRankList">
+        	<result name="success">/WEB-INF/pages/videoRank/videoRank.jsp</result>
+        </action>
+		
+		<!-- 获取图文直播列表 -->
+        <action name="liveList" class="tuwenLiveAction" method="getAllLive">
+        	<result name="success">/WEB-INF/pages/tuwen/subjectList.jsp</result>
+        </action>
+		<!-- 获取图文直播详情 -->
+        <action name="liveDetail" class="tuwenLiveAction" method="detailLive">
+        	<result name="success">/WEB-INF/pages/tuwen/liveDetail.jsp</result>
+        </action>
+        
+		<!-- 区县排行-->
+        <action name="quxianList" class="quxianRankAction" method="RankList">
+        	<result name="success">/WEB-INF/pages/quxian/quxianList.jsp</result>
+        </action>
+        
+        <!-- 到增/改点播在线用户页面前用户登录-->
+        <action name="gotoOrderPlay" class="gotoPlayAction" method="executeNeedLogin">
+        	<result name="success">/WEB-INF/pages/online/playUserLogin.jsp</result>
+        </action>
+        
+		<!-- 到增/改直播在线用户页面前用户登录-->
+        <action name="gotoLivePlay" class="gotoPlayAction" method="executeNeedLogin">
+        	<result name="success">/WEB-INF/pages/online/playUserLogin.jsp</result>
+        </action>
+        
+		<!-- 到增/改点播在线用户页面-->
+        <action name="toOrderPlay" class="gotoPlayAction" method="executeIsLogin">
+        	<result name="success">/WEB-INF/pages/online/orderUserOnline.jsp</result>
+        	<result name="login">/WEB-INF/pages/online/gotoLogin.jsp</result>
+        </action>
+        
+		<!-- 到增/改直播在线用户页面-->
+        <action name="toLivePlay" class="gotoPlayAction" method="executeIsLogin">
+        	<result name="success">/WEB-INF/pages/online/liveUserOnline.jsp</result>
+        	<result name="login">/WEB-INF/pages/online/gotoLogin.jsp</result>
+        </action>
+        
+        <!-- 留言信息列表页面-->
+        <action name="leaveMessageList" class="leaveMessageAction" method="queryLeaveMessage">
+        	<result name="success">/WEB-INF/pages/leaveMessage/leaveMessage.jsp</result>
+        </action>
+        <!-- 新建留言信息-->
+        <action name="createLeaveMessage" class="leaveMessageAction" method="createLeaveMessage">
+        	<result name="success" type="redirectAction">leaveMessageList?typeId=${typeId}&amp;errorCode=${errorCode}&amp;showTabInx=1</result>
+        	<result name="input" type="chain">leaveMessageList</result>
+        	<result name="login" type="chain">leaveMessageList</result>
+        </action>
+        <!-- 首页新建留言信息-->
+        <action name="writeMessage" class="leaveMessageAction" method="createLeaveMessage">
+        	<result name="success">/WEB-INF/pages/leaveMessage/leaveMsgIndex.jsp</result>
+        	<result name="login">/WEB-INF/pages/leaveMessage/leaveMsgIndex.jsp?error=1</result>
+        	<result name="input">/WEB-INF/pages/leaveMessage/leaveMsgIndex.jsp?error=2</result>
+        </action>
+        <!-- 首页包含留言页面-->
+        <action name="gotoLeaveMessage">
+        	<result name="success">/WEB-INF/pages/leaveMessage/leaveMsgIndex.jsp</result>
+        </action>
+        
+        <!-- 验证码图片 -->  
+        <action name="randValidateCode" class="com.sino.bjcc.leaveMessage.action.ValidateCodeAction">  
+            <result type="stream">  
+                <param name="contentType">image/jpeg</param>  
+                <param name="inputName">inputStream</param>  
+            </result>  
+        </action>  
+        
+        <!-- 用户登录 -->  
+        <action name="login" class="loginAction" method="userLogin">  
+            <result name="success">/WEB-INF/pages/global/loginResult.jsp</result>  
+        </action>  
+        
+		<!-- 到在线调查页面-->
+        <action name="viewSurvey" class="surveyAction" method="showSurvey">
+        	<result name="success">/WEB-INF/pages/survey/surveyView.jsp</result>
+        </action>
+        
+		<!-- 提交在线调查答案-->
+        <action name="completeSurvey" class="surveyAction" method="completeSurvey">
+        	<result name="success">/WEB-INF/pages/survey/surveyComplete.jsp</result>
+        </action>
+        
+		<!-- 记录文章访问日志 -->
+        <action name="visitArticle" class="visitLogAction" method="visitArticle">
+        	<result name="success">/WEB-INF/pages/global/loginResult.jsp</result>
+        </action>
+        
+		<!-- 记录栏目访问日志 -->
+        <action name="visitChannel" class="visitLogAction" method="visitChannel">
+        	<result name="success">/WEB-INF/pages/global/loginResult.jsp</result>
+        </action>
+        
+        <!-- 文章浏览次数 -->
+        <action name="visitArticleCount" class="visitLogAction" method="articleVisitCount">
+        	<result name="success">/WEB-INF/pages/global/articleVisitCont.jsp</result>
+        </action>
+        
+        <!-- 推荐视频 -->
+        <action name="newVideo" class="newVideoAction" method="palyUrl">
+        	<result name="success">/WEB-INF/pages/newVideo/newVideo.jsp</result>
+        </action>
+        
+        <!-- 到搜索页 -->
+        <action name="gotoSearch">
+        	<result name="success">/WEB-INF/pages/search/searchResult.jsp</result>
+        </action>
+        <action name="search" class="searchAction" method="searchFiles">
+        	<result name="success">/WEB-INF/pages/search/searchResult.jsp</result>
+        </action>
+    </package>
+    
+</struts> 

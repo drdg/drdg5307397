@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns:aop="http://www.springframework.org/schema/aop" 
+         xmlns:tx="http://www.springframework.org/schema/tx" 
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"> 
+    
+    <!-- Hibernate SessionFactory -->  
+    <bean id="sessionFactory"  class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">  
+        <property name="dataSource" ref="dataSource">  
+        </property>  
+        <property name="hibernateProperties">  
+            <props>  
+                <prop key="hibernate.dialect">org.hibernate.dialect.OracleDialect</prop>  
+                <prop key="hibernate.show_sql">true</prop>  
+                <prop key="hibernate.generate_statistics">true</prop>  
+                <prop key="hibernate.connection.release_mode">auto</prop>  
+                <prop key="hibernate.autoReconnect">true</prop>  
+            </props>  
+        </property>  
+        <property name="mappingResources">  
+            <list>  
+                <!-- 图文直播 -->
+                <value>sinoLive-hbm.xml</value>  
+                <!-- 长城热词 -->
+                <value>hotCode-hbm.xml</value> 
+                <value>sinoProgram-hbm.xml</value> 
+                <!-- 区县排行 -->
+                <value>sinoFlowDept-hbm.xml</value>  
+                <value>sinoVideoShow-hbm.xml</value> 
+                <!-- 课程排行 -->
+                <value>sinoUserBehavior-hbm.xml</value>  
+				<!-- 课程预告 -->
+                <value>cmsArticle-hbm.xml</value> 
+                <value>cmsChannel-hbm.xml</value> 
+                <value>cmsContentproperty-hbm.xml</value> 
+				<!-- 在线用户 -->
+                <value>sinoOnline-hbm.xml</value> 
+                <!-- 站内短信管理 -->
+                <value>EWebsiteMessage-hbm.xml</value>
+                <value>EReceiveMessage-hbm.xml</value> 
+				<!-- 个人学习需求 -->
+				<value>EResourceAdvice.hbm.xml</value>
+				<!-- 集体用户学习记录 -->
+				<value>ETrainMessage.hbm.xml</value>
+				<!-- 添加用户学习成效 -->
+				<value>EResultsRecord.hbm.xml</value>
+				<!-- 学习计划管理 -->
+				<value>EStudyPlan-hbm.xml</value>
+				<!-- 用户专题管理 -->
+				<value>EUserChannel-hbm.xml</value>
+				<!-- 用户问卷管理 -->
+				<value>EQuestionnaire-hbm.xml</value>
+				<!-- 用户收藏管理 -->
+				<value>EUserStore-hbm.xml</value>
+				<!-- 评测试卷 -->
+				<value>EEvaluationTest-hbm.xml</value>
+				<!-- 留言信息（咨询答疑） -->
+				<value>sinoLeaveMessage-hbm.xml</value>
+
+				<value>discuss-hbm.xml</value>
+
+				<!-- 在线调查 -->
+				<value>survey-hbm.xml</value>
+				<!-- 访问日志 -->
+				<value>visitlog-hbm.xml</value>
+				
+				<!-- 推荐课程(最新课程) -->
+				<value>sinoVideo-hbm.xml</value>
+				<value>sinoProgramBean-hbm.xml</value>
+				<!-- 系统常量配置 -->
+				<value>ConstantConfigure-hbm.xml</value>
+				<!-- 全文检索（关键词） -->
+				<value>sinoSearch-hbm.xml</value>
+            </list>  
+        </property> 
+        	   
+            
+    </bean>
+    
+    <bean id="dataSource"  class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">  
+        
+        <property name="driverClass" value="oracle.jdbc.driver.OracleDriver"></property>
+        <property name="jdbcUrl" value="jdbc:oracle:thin:@114.255.12.204:1521:ORCL"></property>   
+        <property name="user" value="bjccwebsite"></property>   
+        <property name="password" value="bjcc1qaz"></property>
+       
+        <!-- 
+=======
+        <property name="jdbcUrl" value="jdbc:oracle:thin:@(DESCRIPTION =(ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.2.39)(PORT = 1521))(LOAD_BALANCE = yes)(CONNECT_DATA =(SERVER = DEDICATED)(SERVICE_NAME = orcl)(FAILOVER_MODE =(TYPE = SELECT)(METHOD = BASIC)(RETRIES = 180)(DELAY = 5))))"></property>   
+        <property name="user" value="BJCCWEBSITE"></property>   
+        <property name="password" value="123456"></property> 
+>>>>>>> .r7336
+    	-->
+    	
+    	<!--连接池中保留的最小连接数。-->  
+        <property name="minPoolSize" value="5"></property>  
+    	<!--连接池中保留的最大连接数。Default: 15 -->  
+        <property name="maxPoolSize" value="30"></property>  
+   		<!--初始化时获取的连接数，取值应在minPoolSize与maxPoolSize之间。Default: 3 -->  
+        <property name="initialPoolSize" value="10"></property>  
+    	<!--最大空闲时间,60秒内未使用则连接被丢弃。若为0则永不丢弃。Default: 0 -->  
+        <property name="maxIdleTime" value="60"></property>  
+    	<!--当连接池中的连接耗尽的时候c3p0一次同时获取的连接数。Default: 3 -->  
+        <property name="acquireIncrement" value="5"></property>  
+	    <!--JDBC的标准参数，用以控制数据源内加载的PreparedStatements数量。但由于预缓存的statements  
+	                属于单个connection而不是整个连接池。所以设置这个参数需要考虑到多方面的因素。  
+	               如果maxStatements与maxStatementsPerConnection均为0，则缓存被关闭。Default: 0-->  
+        <property name="maxStatements" value="0"></property>
+    	<!--每60秒检查所有连接池中的空闲连接。Default: 0 --> 
+        <property name="idleConnectionTestPeriod" value="60"></property>  
+    	<!--定义在从数据库获取新连接失败后重复尝试的次数。Default: 30 -->  
+        <property name="acquireRetryAttempts" value="30"></property>  
+	    <!--获取连接失败将会引起所有等待连接池来获取连接的线程抛出异常。但是数据源仍有效  
+	             保留，并在下次调用getConnection()的时候继续尝试获取连接。如果设为true，那么在尝试  
+	              获取连接失败后该数据源将申明已断开并永久关闭。Default: false-->  
+        <property name="breakAfterAcquireFailure" value="true"></property>  
+	    <!--因性能消耗大请只在需要的时候使用它。如果设为true那么在每个connection提交的  
+	             时候都将校验其有效性。建议使用idleConnectionTestPeriod或automaticTestTable  
+	             等方法来提升连接测试的性能。Default: false -->  
+        <property name="testConnectionOnCheckout" value="false"></property>  
+    </bean>  
+    
+	<bean id="tx" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	
+	<!-- 声明  使用事务为 注解的方式！！！ -->
+	<tx:annotation-driven transaction-manager="tx" />
+
+	<bean id="daoBase" scope="session">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+    
+    <bean id="dateTimeDao" class="com.sino.bjcc.common.dao.DateTimeDaoImpl" parent="daoBase">
+	</bean>
+</beans> 

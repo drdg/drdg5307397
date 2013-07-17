@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- 关键词表 -->
+<hibernate-mapping package="com.sino.bjcc.hotCode.bean">
+	
+	<!--长城热词字表  -->
+	<class name="HotCode" table="SINO_HOT_WORD">
+		<id name="hotId" type="long" column="HOT_ID">
+			<generator class="sequence">
+				<param name="sequence">HOT_WORD</param>
+			</generator>
+
+		</id>
+		<property name="name" column="NAME" />
+		<property name="type" column="TYPE" />
+		<property name="url" column="URL" />
+		<property name="status" column="STATUS" />
+		<property name="createTime" column="CREATE_TIME" />
+		<property name="desc" column="DESCRIPTION" />
+		<property name="kId" column="KID" />
+	
+	</class>
+
+</hibernate-mapping>

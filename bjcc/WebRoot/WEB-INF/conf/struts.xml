@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+    "http://struts.apache.org/dtds/struts-2.0.dtd"> 
+
+<struts> 
+   
+  	<!-- 禁用动态方法调用 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false"></constant>
+	<!-- 指定struts的默认编码 -->
+	<constant name="struts.i18n.encoding" value="UTF-8"></constant>
+	<!-- 指定struts的全局资源文件 -->
+	<constant name="struts.custom.i18n.resources" value="globalResource"></constant>
+	<!-- 指定struts UI标签的生成样式 -->
+	<constant name="struts.ui.theme" value="simple"/>
+	
+    <package name="struts2" extends="struts-default"> 
+    	
+    	<!-- 配置拦截器 -->
+		<interceptors>
+			<interceptor name="exceptionInterceptor" class="com.sino.bjcc.common.interceptor.ExceptionInterceptor"></interceptor>
+			
+			<interceptor-stack name="sinoInterceptorStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="exceptionInterceptor"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="sinoInterceptorStack"></default-interceptor-ref>
+    
+    	<!-- 配置全局跳转结果和Action -->
+		<default-action-ref name="notFound"></default-action-ref>
+    	<global-results>
+			<result name="index">/index.jsp</result>
+			<result name="error" type="redirectAction">toError</result>
+			<result name="nologin" type="redirectAction">prepareLoginPersonCenterAction.action</result>
+		</global-results>
+				
+		<global-exception-mappings>
+            <exception-mapping
+                    result="error"
+                    exception="java.lang.Throwable"/>
+        </global-exception-mappings>
+    
+    	<action name="toError">
+    		<result>/WEB-INF/pages/global/error.jsp</result>
+    	</action>
+    	
+    	<!-- 配置个性化学习登录 -->
+    	<action name="*PersonCenterAction" method="{1}PersonCenter" class="loginAction">
+    	 	<result name="personCenterLoginSucc" type="redirectAction">indexPersonCenterAction.action</result>
+    	 	<result name="personCenterIndex">/WEB-INF/pages/personalcenter/personalstudy.jsp</result>
+    	</action>
+    </package> 
+    <!-- 登陆用户信息 -->
+    <include file="../conf/struts-personal.xml"></include>
+    <!-- 包含图文直播配置文件 -->
+    <include file="../conf/struts-busi.xml"></include>
+    <include file="../conf/struts-busi-json.xml"></include>
+    <!-- 用户行为记录 -->
+    <include file="../conf/struts-userBehavior.xml"></include>
+    <!-- 信息记录 -->
+    <include file="../conf/struts-message.xml"></include>
+   	<!-- 个人学习需求 -->
+   	<include file="../conf/struts-learning.xml"></include>
+   	<!-- 学习计划 -->
+   	<include file="../conf/struts-studyplan.xml"></include>
+   	<!-- 用户专题 -->
+   	<include file="../conf/struts-userchannel.xml"></include>
+   	<!-- 用户问卷 -->
+   	<include file="../conf/struts-questionnaire.xml"></include>
+   	<!-- 用户收藏 -->
+   	<include file="../conf/struts-userstore.xml"></include>
+</struts> 

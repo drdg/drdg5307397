@@ -1,0 +1,101 @@
+charset "utf-8";
+/*-- CSS Document-- */
+body,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form{ margin:0; padding:0; }
+body{font-family:Arial; margin:0; padding:0; background-repeat:repeat-x; font-size:12px; background-image:url(../images/back.gif); background-repeat:repeat-x;}
+li{list-style:none}
+img{border:none}
+a{ text-decoration:none; color:#525252;}
+a:hover{ text-decoration:underline; color:#a30304;}
+a.kjdb_word1{ color:#be1928; text-decoration:none;}
+a.kjdb_word1:hover{ color:#be1928; text-decoration:underline;}
+a.yzm{ color:#16619a; text-decoration:none;}
+a.yzm:hover{ color:#de9f00; text-decoration:underline;}
+
+a.sxtj{ color:#ca0d09; text-decoration:underline;}
+a.sxtj:hover{ color:#000; text-decoration:underline;}
+
+
+.kjdb_tree{ width:200px; height:auto; margin:auto; margin:5px 0; }
+.kjdb_tree ul{ margin:0; padding:0;}
+.kjdb_tree ul li{ width:180px; height:auto; line-height:18px; margin-top:8px; margin-left:20px; overflow:hidden; color:#be1928; font-size:14px; font-weight:bold;}
+.kjdb_tree ul li span{ display:block; width:150px; height:18px; line-height:18px; overflow:hidden; margin-top:5px; margin-left:15px; font-size:12px; font-weight:normal; }
+
+.kjdb_ct_1{ width:100%; height:auto; margin-top:20px; border-bottom:#cdcdcd dashed 1px; padding-bottom:10px;}
+.mingcheng{ float:left;font-weight:bold; line-height:18px; color:#444444;}
+.neirong{ display:block; float:left; height:18px; line-height:18px; overflow:hidden; color:#444444;}
+.neirong1{display:block; float:left; height:40px; line-height:18px; overflow:hidden; color:#444444; }
+
+
+#table_dy{width:100%;border-top:1px solid #fbd499; border-left:1px solid #fbd499; color:#7b7b7b;}
+#table_dy td{ border-right:1px solid #fbd499;border-bottom:1px solid #fbd499; font-size:12px;}
+
+
+.zxdy_tab{ width:150px; height:25px; float:right; } 
+.zxdy_tab ul{ margin:0; padding:0;}
+.zxdy_tab li{ height:25px; float:left;  text-align:center; display:inline; line-height:25px; margin-left:8px;}
+.zxdy_tab a{  height:25px; display:block; font-size:12px; text-decoration:none; display:-moz-inline-box; display:inline-block; color:#000; }
+.zxdy_tab .hover{  height:25px; background-color:#fff; font-weight:bold; color:#d30101; border:#cdcdcd solid 1px; border-bottom:none; padding:0 5px; margin-bottom:1px;}
+
+.Contentbox{clear:both; margin-top:0px; border:1px solid #fad38e;  text-align:left; overflow:hidden;}
+
+
+
+.Contentbox1{clear:both; margin-top:0px; padding:8px; text-align:left; overflow:hidden;}
+
+.wyly{ width:730px; height:auto;  border:#f7d596 solid 1px;  margin-top:10px; overflow:hidden;}
+
+.spbf_left{ width:640px; height:auto; margin:auto; float:left; border:#dadada solid 1px;  background-color:#444;}
+.spbf_ct1{ width:640px; height:auto; margin:auto; border:#dadada solid 1px; margin-top:5px;}
+.spbf_tt{ font-size:14px; font-weight:bold; color:#a84f25; margin-left:10px;}
+
+.spk{ width:477px; height:438px; margin:auto;}
+
+.spbf_right{ width:335px; height:450px; float:right;}
+.spbf_right_ct{ width:310px; height:auto; padding:10px;}
+.spbf_right_ct ul{ padding:0; margin:0;}
+.spbf_right_ct ul li{ width:132px; height:120px; line-height:24px; overflow:hidden; float:left; margin:5px 8px; }
+.spbf_right_ct ul li img{ padding:2px;  border:#dadada solid 1px;}
+.spbf_right_ct span{ display:block; font-size:14px; margin-top:10px; line-height:24px;}
+
+.zthg{ width:720px; height:auto; margin:auto;}
+.zthg ul{ margin:0; padding:0;}
+.zthg ul li{ width:720px; height:20px; line-height:20px; overflow:hidden; margin-top:5px; background-color:#fff; border:none; font-size:14px; }
+
+
+.search{
+width: 100%;
+height: 35px;
+border-bottom:0;
+overflow: hidden;
+background-image:url(../images/wskt_bg.gif); background-repeat:repeat-x;
+}
+
+
+.sstj{ width:100%; height:auto; border-bottom:dashed #ccc 1px; margin-top:5px; padding:5px 0;}
+.sstj ul{ margin:0; padding:0; }
+.sstj ul li{  float:left; height:20px; margin:5px 8px; word-break:keep-all;}
+
+.leibie{ color:#c90e09; font-weight:bold; line-height:25px;}
+.quanbu{ background-color:#fbe8c7; padding:5px;}
+
+
+.zkyc{ width:96%; height:21px; background-image:url(../images/zk_bg.jpg); text-align:center; padding:6px 0 0 0; overflow:hidden;}
+.zkyc1{ width:96%; height:21px; background-image:url(../images/zk_bg1.jpg); text-align:center; padding:6px 0 0 0; overflow:hidden;}
+
+#intro {
+color: #036;
+font:12px;
+border: 4px #ccc double;
+border-top:0;
+height:70px;
+}
+#key{color:#525252;float:right; cursor:hand;}
+hr{height:1px;border:1px #ccc dotted}
+
+
+
+
+
+
+
+

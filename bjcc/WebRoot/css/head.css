@@ -1,0 +1,32 @@
+/* CSS Document */
+body,p,ul,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form{ margin:0; padding:0; }
+body{font-family:Arial; margin:0; padding:0; background-repeat:repeat-x; font-size:12px; background-image:url(../images/back.gif); background-repeat:repeat-x;}
+li{list-style:none}
+img{border:none}
+a{ text-decoration:none; color:#525252;}
+a:hover{ text-decoration:underline; color:#a30304;}
+a.nav_word{ color:#fff; text-decoration:none;}
+a.nav_word:hover{ color:#fff; text-decoration:underline;}
+a.zc{ color:#de9f00; text-decoration:underline;}
+a.zc:hover{ color:#de9f00; text-decoration:none;}
+a.gxh{ color:#d30101; text-decoration:none;}
+a.gxh:hover{ color:#d30101; text-decoration:underline;}
+
+
+/* head */
+
+.head{ width:1000px; height:26px; margin:auto;}
+.banner{ width:1000px; height:auto; margin:auto;}
+.nav{ width:1000px; height:70px; background-image:url(../images/menu_bg.gif); margin:auto;}
+.nav_ct{ width:990px; height:70px; float:left;}
+.area{ width:1000px; height:33px; margin:auto; background-image:url(../images/menu_1_bg.gif);}
+.area_ct{ width:985px; height:25px; float:left; color:#4f4f51; margin-top:8px;}
+.area_ct ul{ margin:0; padding:0;}
+.area_ct ul li{ float:left; margin:3px 7px 0 7px;}
+
+.search{ width:998px; height:35px; background-image:url(../images/sc_bg.gif); border:#cdcdcd solid 1px; margin:auto; margin-top:10px;}
+
+
+
+
+

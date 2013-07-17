@@ -1,0 +1,18 @@
+.background {
+	Z-INDEX: 998; POSITION: fixed; WIDTH: 100%; BACKGROUND: rgb(50,50,50); HEIGHT: 100%; TOP: 0px; LEFT: 0px; _position: absolute
+}
+.webox {
+	Z-INDEX: 999; margin-top: 20px;margin-bottom: 10px; BORDER-BOTTOM: #000 0px solid; POSITION: fixed; BORDER-LEFT: #000 0px solid; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BORDER-TOP: #000 0px solid; BORDER-RIGHT: #000 0px solid; PADDING-TOP: 0px; _position: absolute; _background: #777
+}
+.webox #inside {
+	BACKGROUND-COLOR: #ffffff; HEIGHT: 240px
+}
+.webox #inside H1 {
+	POSITION: relative; PADDING-BOTTOM: 0px; LINE-HEIGHT: 30px; MARGIN: 0px; PADDING-LEFT: 5px; PADDING-RIGHT: 0px; DISPLAY: block; FONT-FAMILY: Arial; BACKGROUND: #f1f7fc; HEIGHT: 30px; COLOR: #000; FONT-SIZE: 13px; CURSOR: move; FONT-WEIGHT: 800; PADDING-TOP: 0px; -moz-user-select: none; -webkit-user-select: none
+}
+.webox #inside H1 A {
+	BACKGROUND-IMAGE: url(close.fw.png); POSITION: absolute; MARGIN-TOP: 6px; WIDTH: 17px; DISPLAY: inline-block; BACKGROUND-REPEAT: no-repeat; BACKGROUND-POSITION: center top; HEIGHT: 17px; FONT-SIZE: 14px; TOP: 0px; CURSOR: pointer; RIGHT: 6px
+}
+.webox #inside H1 A:hover {
+	BACKGROUND-POSITION: center bottom
+}

@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping>
+	<class name="com.sino.bjcc.tuwenLive.bean.LiveSubject" table="SINO_LIVE_SUBJECT">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="subjectId" type="long" column="live_id">
+			<generator class="increment" />
+		</id>
+
+		<property name="title" column="title" type="string" not-null="false"
+			length="150" />
+		<property name="description" column="description" type="string"
+			not-null="false" length="600" />
+		<property name="publishDate" column="publish_date" type="timestamp"
+			not-null="false" />
+		<property name="publishUrl" column="publish_url" type="string"
+			not-null="false" length="400" />
+		<property name="state" column="state" type="string" not-null="false"
+			length="1" />
+		<property name="createDate" column="create_date" type="timestamp"
+			not-null="false" />
+		<property name="updateDate" column="update_date" type="timestamp"
+			not-null="false" />
+		<property name="delFlag" column="del_flag" type="string"
+			not-null="false" length="1" />
+		
+		<!-- 直播內容  -->
+		<bag name="contentList" inverse="false" lazy="false" order-by="spoke_time desc" where="del_flag='0'" cascade="all">
+			<key column="live_id"></key>
+			<one-to-many class="com.sino.bjcc.tuwenLive.bean.LiveContent"/>
+		</bag>
+		
+		<!-- 直播图片 -->
+	    <bag name="pictureList" inverse="false" lazy="false" order-by="spoke_time desc" where="del_flag='0'" cascade="all">
+	    	<key column="live_id"></key>
+			<one-to-many class="com.sino.bjcc.tuwenLive.bean.LivePicture"/>
+	    </bag>
+	</class>	
+	
+	<class name="com.sino.bjcc.tuwenLive.bean.LiveContent" table="SINO_LIVE_CONTENT">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="contentId" type="long" column="live_content_id">
+			<generator class="increment" />
+		</id>
+	
+		<property name="subjectId" column="live_id" type="long"
+			not-null="false" length="10" />
+		<property name="spokesman" column="spokesman" type="string"
+			not-null="false" length="30" />
+		<property name="content" column="content" type="string"
+			not-null="false" />
+		<property name="spokeTime" column="spoke_time" type="string"
+			not-null="false" />
+		<property name="createDate" column="create_date" type="timestamp"
+			not-null="false" />
+		<property name="updateDate" column="update_date" type="timestamp"
+			not-null="false" />
+		<property name="delFlag" column="del_flag" type="string"
+			not-null="false" length="1" />
+	</class>	
+		
+	<class name="com.sino.bjcc.tuwenLive.bean.LivePicture" table="sino_live_picture">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="pictureId" type="long" column="live_picture_id">
+			<generator class="increment" />
+		</id>
+	
+		<property name="subjectId" column="live_id" type="long"
+			not-null="false" length="10" />
+		<property name="url" column="url" type="string" not-null="false"
+			length="400" />
+		<property name="title" column="title" type="string" not-null="false"
+			length="90" />
+		<property name="description" column="description" type="string"
+			not-null="false" length="150" />
+		<property name="spokeTime" column="spoke_time" type="string"
+			not-null="false" />
+		<property name="createDate" column="create_date" type="timestamp"
+			not-null="false" />
+		<property name="updateDate" column="update_date" type="timestamp"
+			not-null="false" />
+		<property name="delFlag" column="del_flag" type="string"
+			not-null="false" length="1" />
+	</class>	
+	
+</hibernate-mapping>

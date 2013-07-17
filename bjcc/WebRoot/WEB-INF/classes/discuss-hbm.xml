@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- 关键词表 -->
+<hibernate-mapping package="com.sino.bjcc.discuss.bean">
+	
+	<!--长城热词字表  -->
+	<class name="Discuss" table="CMS_DISCUSS">
+		<id name="ID" type="long" column="ID">
+			<generator class="native" />
+		</id>
+		<property name="siteID" />
+		<property name="author" />
+		<property name="email" />
+		<property name="content" />
+		<property name="ipAddress" />
+		<property name="creationDate" />
+		<property name="status" />
+		<property name="discussUser"/>
+		<property name="articleID"/>
+		<property name="type"/>
+		<property name="grade" type="java.lang.Integer" column="grade"/>
+		<property name="discussUserID"/>
+		<!--<many-to-one name="article" column="articleID"
+			class="com.gpower.services.content.entity.Content" />
+	
+	--></class>
+<class name="Artical" table="CMS_ARTICLE">
+		<id name="ID" type="long" column="ID">
+			<generator class="native" />
+		</id>
+		<property name="siteID" />
+		
+		<!--<property name="email" />
+		<property name="content" />
+		<property name="ipAddress" />
+		<property name="creationDate" />
+		<property name="status" />
+		<property name="discussUser"/>
+		<property name="articleID"/>
+		<property name="grade" type="java.lang.Integer" column="grade"/>
+		--><!--<property name="discussUserID"/>
+		--><!--<many-to-one name="article" column="articleID"
+			class="com.gpower.services.content.entity.Content" />
+	
+	--></class>
+
+</hibernate-mapping>

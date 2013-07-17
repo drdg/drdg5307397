@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+
+	<class name="com.sino.bjcc.visitLog.bean.ArticleVisitLog" table="CMS_ARTICLE_VISITLOG">
+        <id name="id" type="long">
+            <generator class="increment"/>
+        </id>
+		<property name="siteId"/>
+		<property name="articleId"/>
+		<property name="system"/>
+		<property name="browser"/>
+		<property name="ipAddress"/>
+		<property name="creationDate"/>
+	</class>
+
+	<class name="com.sino.bjcc.visitLog.bean.ChannelVisitLog" table="CMS_CHANNEL_VISITLOG">
+        <id name="id" type="long">
+            <generator class="increment"/>
+        </id>
+		<property name="siteId"/>
+		<property name="channelId"/>
+		<property name="system"/>
+		<property name="browser"/>
+		<property name="ipAddress"/>
+		<property name="creationDate"/>
+	</class>
+
+</hibernate-mapping>

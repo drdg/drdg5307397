@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="userStore" extends="struts2">
+		<action name="*UserStoreAction" class="userStoreAction" method="{1}">
+			<result name="prepareuserstore">/WEB-INF/pages/userstore/userCollect.jsp</result>
+			<result name="updateuserstore">/WEB-INF/pages/userstore/userstore_mod.jsp</result>
+		</action>
+	</package>
+
+	<package name="userStoreAjax" extends="json-default">
+		<action name="*UserStoreAjaxAction" class="userStoreAjaxAction" method="{1}">
+			<result type="json"></result>
+		</action>
+	</package>
+</struts>

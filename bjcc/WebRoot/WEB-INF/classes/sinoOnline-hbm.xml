@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd" >
+
+<hibernate-mapping package="com.sino.bjcc.online.bean">
+	<!-- 点播在线用户 -->
+	<class name="com.sino.bjcc.online.bean.DianboOnlineUser" table="sino_statistics_video">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="long" column="ID">
+			<generator class="increment" />
+		</id>
+
+		<property name="ip" column="IP" type="string" />
+		<property name="userId" column="USER_ID" type="long" />
+		<property name="orgId" column="ORG_ID" type="long" />
+		<property name="programId" column="PROGRAM_ID" type="long" />
+		<property name="startTime" column="START_TIME" type="timestamp" />
+		<property name="endTime" column="END_TIME" type="timestamp" />
+		<property name="siteType" column="SITE_TYPE" type="string" />
+	</class>
+	
+	<!-- 直播在线用户 -->
+	<class name="com.sino.bjcc.online.bean.ZhiboOnlineUser" table="sino_statistics_live">
+		<meta attribute="sync-DAO">false</meta>
+		<id name="id" type="long" column="ID">
+			<generator class="increment" />
+		</id>
+
+		<property name="ip" column="IP" type="string" />
+		<property name="userId" column="USER_ID" type="long" />
+		<property name="orgId" column="ORG_ID" type="long" />
+		<property name="startTime" column="START_TIME" type="timestamp" />
+		<property name="endTime" column="END_TIME" type="timestamp" />
+		<property name="siteType" column="SITE_TYPE" type="string" />
+		<property name="liveType" column="LIVE_TYPE" type="string" />
+		<property name="liveTitle" column="LIVE_TITLE" type="string" />
+	</class>
+</hibernate-mapping>

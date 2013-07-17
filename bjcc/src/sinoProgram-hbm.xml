@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+      "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+          "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+	<!-- program -->
+<hibernate-mapping package="com.sino.bjcc.media.bean"> 
+
+	<class name="Program" table="SINO_PROGRAM">
+		<id name="id" type="long" column="ID">
+			<generator class="sequence">
+				<param name="sequence">PROGRAM</param>
+			</generator>
+
+		</id>
+		<property name="name" column="NAME" />
+		<property name="ename" column="ENGLISH_NAME" />
+		<property name="orgCode" column="ORG_CODE" /> 
+		<property name="channel" column="CHANNEL" />
+		<property name="provider" column="PROVIDER" />
+		<property name="timeLength" column="LENGTH" />
+		<property name="speaker" column="DIRECTOR" />
+		<property name="cast" column="CAST" />
+		<property name="role" column="ROLE" />
+		<property name="tags" column="TAGS" />
+		<property name="releaseDate" column="RELEASE_DATE" />
+		<property name="num" column="EPISODES" type="java.lang.Long"/>
+		<property name="createDate" column="CREATE_DATE" />
+		<property name="updateDate" column="UPDATE_DATE" />
+		<property name="summary" column="SUMMARY" />
+		<property name="sourceOrg" column="PROVIDER_ORG_ID" type="java.lang.Long"/>
+		<property name="audiences" column="AUDIENCE_GROUP_ID" type="java.lang.Long"/>
+		<property name="form" column="MEDIA_TYPE_ID" type="java.lang.Long"/>
+		<property name="source" column="COLLECT_SOURCE_ID" type="java.lang.Long"/>
+		<property name="county" column="COUNTRY_ID" type="java.lang.Long"/>
+		<property name="middle_image" column="MIDDLE_IMAGE" /> 
+	</class>
+	<!-- ListBoxItem -->
+	<class name="ListBoxItem" table="SINO_DICT_FIELDS_VALUES">
+		<id name="id" type="long" column="ID">
+			<generator class="sequence">
+				<param name="sequence">PROGRAM</param>
+			</generator>
+
+		</id> 
+		<property name="conditionId" column="FIELD_ID" />
+		<property name="value" column="VALUE" />
+		<property name="displayIndex" column="DISPLAY_INDEX" />
+		<property name="code" column="CODE" />
+	</class>
+	<class name="Video" table="SINO_VIDEO">
+		<id name="id" type="long" column="ID">
+			<generator class="native" />
+		</id> 
+		<!--<property name="program_id" column="PROGRAM_ID" />
+		--><property name="name" column="NAME" />
+		<property name="state" column="STATUS" />
+		<property name="channel" column="CHANNEL" />
+		<property name="play_url" column="PLAY_URL" /> 
+		<property name="program_id" column="program_id" /> 
+		<!--<many-to-one name="program" column="program_id" unique="true">
+		</many-to-one>
+	--></class>
+</hibernate-mapping>

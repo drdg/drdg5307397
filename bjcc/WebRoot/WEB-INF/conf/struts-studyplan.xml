@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="studyPlan" extends="struts2">
+		<action name="*StudyPlanAction" class="studyPlanAction" method="{1}">
+			<result name="prepareplan">/WEB-INF/pages/studyplan/studyplan.jsp</result>
+			<result name="headplan">/WEB-INF/pages/studyplan/headplan.jsp</result>
+			<result name="selectcourse">/WEB-INF/pages/studyplan/selectcourse.jsp</result>
+			<result name="queryprogram">/WEB-INF/pages/studyplan/plan_program_list.jsp</result>
+			
+		</action>
+	</package>
+	
+	<package name="studyPlanAjax" extends="json-default">
+		<action name="*StudyPlanAjaxAction" class="studyPlanAjaxAction" method="{1}">
+			<result type="json"></result>
+		</action>
+	</package>
+</struts>

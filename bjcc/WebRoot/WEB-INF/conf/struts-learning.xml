@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<package name="learningneed" extends="struts2">
+		<action name="*Learning" class="com.sino.elearning.learningneed.Action.EResourceAdviceAction" method="{1}">
+			<result name="success">/WEB-INF/pages/learningNeed/studydemand.jsp</result>
+			<result name="addneeds">/WEB-INF/pages/learningNeed/demand_add.jsp</result>
+			<result name="savesuccess" type="redirect">executeLearning.action</result>
+			<result name="savefail" type="redirect">addNeedsLearning.action</result>
+			<result name="delsuccess" type="redirect">executeLearning.action</result>
+			<result name="delonesuccess" type="redirect">executeAllLearning.action</result>
+			<result name="datilsuccess">/WEB-INF/pages/learningNeed/demand_datil.jsp</result>
+			<result name="jump">/WEB-INF/pages/learningNeed/studydemandList.jsp</result>
+			<result name="findall">/WEB-INF/pages/learningNeed/studydemandallList.jsp</result>
+		</action>
+	</package>
+</struts>

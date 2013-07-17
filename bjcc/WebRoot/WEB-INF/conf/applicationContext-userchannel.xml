@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns:aop="http://www.springframework.org/schema/aop" 
+         xmlns:tx="http://www.springframework.org/schema/tx" 
+         xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd 
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd 
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd"> 
+    <!-- 用户专题action -->
+    <bean id="userChannelAction" class="com.sino.elearning.userchannel.action.EUserChannelAction" scope="prototype">
+    	<property name="userChannelService" ref="userChannelService"></property>
+    </bean>
+    <bean id="userChannelAjaxAction" class="com.sino.elearning.userchannel.action.EUserChannelAjaxAction" scope="prototype">
+    	<property name="userChannelService" ref="userChannelService"></property>
+    </bean>
+    
+    <!-- 用户专题service -->
+    <bean id="userChannelService" class="com.sino.elearning.userchannel.service.impl.EUserChannelServiceImpl">
+    	<property name="userChannelDao" ref="userChannelDao"></property>
+    </bean>
+    
+    <!-- 用户专题dao -->
+    <bean id="userChannelDao" class="com.sino.elearning.userchannel.dao.impl.EUserChannelDaoImpl" parent="daoBase"></bean>
+    
+</beans>

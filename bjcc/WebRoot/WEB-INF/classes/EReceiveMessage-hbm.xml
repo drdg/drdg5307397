@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="com.sino.elearning.msg.bean.EReceiveMessage"
+		table="E_RECEIVE_MESSAGE">
+		<id name="receiveMsgId" type="java.lang.Long">
+			<column name="RECEIVE_MSG_ID" precision="22" scale="0" />
+			<generator class="native" />
+		</id>
+		<property name="receiveName" type="java.lang.String">
+			<column name="RECEIVENAME" length="50" />
+		</property>
+		<property name="status">
+			<column name="STATUS" length="1" />
+		</property>
+		<property name="mesStatus">
+			<column name="MES_STATUS" length="1" />
+		</property>
+		<many-to-one name="websiteMessage" class="com.sino.elearning.msg.bean.EWebsiteMessage" fetch="select">
+			<column name="ID" not-null="true"></column>
+		</many-to-one>
+	</class>
+</hibernate-mapping>

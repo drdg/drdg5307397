@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE struts PUBLIC 
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN" 
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+
+<struts>
+   
+    <!-- 记录用户行为 -->
+    <package name="behavior" extends="json-default">
+		<action name="userBehavior" class="userBehaviorAction" method="addUserBehavior">
+			<result name="success" type="json"></result>
+		</action>
+		
+		<action name="writeBehavior" class="writeBehaviorAction" method="writeStartDate">
+			 <result name="success" type="json"></result> 
+		</action>
+		
+		<action name="behavior">
+			<result name="success">/WEB-INF/pages/userBehavior/writeBehavior.jsp</result>
+		</action>
+    </package>
+    <!-- 查询用户的学习记录 -->
+    <package name="studyrecord" extends="struts2">
+    	<action name="*Behavior" class="com.sino.elearning.studyrecord.Action.BehaviorAction"  method="{1}">
+    		<result name="success">/WEB-INF/pages/studyrecord/studyrecord.jsp</result>
+    		<result name="usersuccess">/WEB-INF/pages/studyrecord/userbehavior.jsp</result>
+    		<result name="trainsuccess">/WEB-INF/pages/studyrecord/trainmessage.jsp</result>
+    	</action>
+    </package>
+    <!-- 用户学习成效 -->
+    <package name="studyresult" extends="struts2">
+    	<action name="*Result" class="com.sino.elearning.studyrecord.Action.EResultRecordAction"  method="{1}">
+    	<result name="jumpsuccess">/WEB-INF/pages/studyrecord/studyresults.jsp</result>
+    	</action>
+    </package>
+    <!-- 用户学习评测 -->
+    <package name="evaluation" extends="struts2">
+    	<action name="*Evaluation" class="com.sino.elearning.studyrecord.Action.EvaluationAction"  method="{1}">
+    	<result name="jumpsuccess">/WEB-INF/pages/studyrecord/studyevaluation.jsp</result>
+    	<result name="detailbaocun">/WEB-INF/pages/studyrecord/studyevaluation_baocun_detail.jsp</result>
+    	<result name="detailtijiao">/WEB-INF/pages/studyrecord/studyevaluation_detail.jsp</result>
+    	<result name="jumpfail" type="redirect">userexecuteBehavior.action</result>
+    	</action>
+    </package>
+</struts> 
