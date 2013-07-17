@@ -1,0 +1,340 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../style_css/car_manager.css" />
+<script type="text/javascript" language="javascript" src="../js/jquery.js"></script>
+<script language="javascript" type="text/javascript" src="../js/area.js" charset="gb2312"></script>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function(){
+			var order_no="";
+			$("#order_time_nes").click(function(){
+					if($("#order_shzd").val()==null|$("#order_shzd").val()==""){
+						$("#tip_shzd").css("display","block");
+						}
+					var d = new Date();
+					order_no = d.getFullYear()+""+(parseInt(d.getMonth())+1)+d.getDate()+d.getHours()+d.getMinutes()+d.getSeconds()+d.getMilliseconds();
+					$("#order_no").html(order_no);
+					$("#order_time_nes").val(d.getFullYear()+"-"+(parseInt(d.getMonth())+1)+"-"+d.getDate()+"  "+d.toLocaleTimeString());
+				});
+			//alert($("input[id]").length);
+			$("#order_shzd").click(function(){
+					if($("#order_hwzl").val()==null|$("#order_hwzl").val()==""){
+						$("#tip_hwzl").html("不能为空");
+						$("#tip_hwzl").css("display","block");
+						}
+					if(!($("#order_shzd").val()==null|$("#order_shzd").val()=="")){
+						$("#tip_shzd").css("display","none");
+						}else{
+							$("#tip_shzd").css("display","block");
+							}
+			});
+			$("#order_hwzl").blur(function(){
+					if(!($("#order_hwzl").val()==null|$("#order_hwzl").val()=="")){
+						$("#tip_hwzl").css("display","none");
+						if(isNaN($("#order_hwzl").val())){
+							$("#tip_hwzl").html("格式不正确");
+							$("#tip_hwzl").css("display","block");
+						}
+						}else{
+							$("#tip_hwzl").html("不能为空");
+							$("#tip_hwzl").css("display","block");
+							}
+			});
+			$("#order_hwzl").click(function(){
+					if($("#order_hwjs").val()==null|$("#order_hwjs").val()==""){
+						$("#tip_hwjs").html("不能为空");
+						$("#tip_hwjs").css("display","block");
+					}
+			});
+			$("#order_hwjs").blur(function(){
+					if(!($("#order_hwjs").val()==null|$("#order_hwjs").val()=="")){
+						$("#tip_hwjs").css("display","none");
+						if(isNaN($("#order_hwjs").val())){
+							$("#tip_hwjs").html("格式不正确");
+							$("#tip_hwjs").css("display","block");
+						}
+						}else{
+							$("#tip_hwjs").html("不能为空");
+							$("#tip_hwjs").css("display","block");
+							}
+			});	
+			$("#order_hwjs").click(function(){
+					if($("#order_hwmc").val()==null|$("#order_hwmc").val()==""){
+						$("#tip_hwmc").html("不能为空");
+						$("#tip_hwmc").css("display","block");
+					}
+			});
+			$("#order_hwmc").blur(function(){
+					if(!($("#order_hwmc").val()==null|$("#order_hwmc").val()=="")){
+						$("#tip_hwmc").css("display","none");
+						}else{
+							$("#tip_hwmc").html("不能为空");
+							$("#tip_hwmc").css("display","block");
+							}
+			});	
+			$("#order_hwmc").click(function(){
+					if($("#order_shrdh").val()==null|$("#order_shrdh").val()==""){
+						$("#tip_shrdh").html("不能为空");
+						$("#tip_shrdh").css("display","block");
+					}
+			});
+			$("#order_shrdh").blur(function(){
+					if(!($("#order_shrdh").val()==null|$("#order_shrdh").val()=="")){
+						var str = $("#order_shrdh").val();
+						var pattern = new RegExp("^(13[0-9]|15[0|3|6|7|8|9]|18[8|9])\\d{8}$");
+						var flag = pattern.test($("#order_shrdh").val());
+						if(flag==true){
+							
+							$("#tip_shrdh").css("display","none");
+						}
+						else if(flag==false){
+							$("#tip_shrdh").html("格式不正确");
+							$("#tip_shrdh").css("display","block");}
+						}else{
+							$("#tip_shrdh").html("不能为空");
+							$("#tip_shrdh").css("display","block");
+							}
+			});	
+			$("#order_shrdh").click(function(){
+					if($("#order_shrdz").val()==null|$("#order_shrdz").val()==""){
+						$("#tip_shrdz").html("不能为空");
+						$("#tip_shrdz").css("display","block");
+					}
+			});
+			$("#order_shrdz").blur(function(){
+					if(!($("#order_shrdz").val()==null|$("#order_shrdz").val()=="")){
+						$("#tip_shrdz").css("display","none");
+						}else{
+							$("#tip_shrdz").html("不能为空");
+							$("#tip_shrdz").css("display","block");
+							}
+			});	
+			$("#order_shrdz").click(function(){
+					if($("#order_shr").val()==null|$("#order_shr").val()==""){
+						$("#tip_shr").html("不能为空");
+						$("#tip_shr").css("display","block");
+					}
+			});
+			$("#order_shr").blur(function(){
+					if(!($("#order_shr").val()==null|$("#order_shr").val()=="")){
+						var pattern = new RegExp("^[\u4E00-\u9FA5]{2,6}");
+						var flag = pattern.test($("#order_shr").val());
+						if(flag==true){
+							$("#tip_shr").css("display","none");
+							}
+						else{
+								$("#tip_shr").html("格式不正确");
+								$("#tip_shr").css("display","block");
+							}
+						}else{
+							$("#tip_shr").html("不能为空");
+							$("#tip_shr").css("display","block");
+							}
+			});	
+			$("#order_shr").click(function(){
+					if($("#order_fhrdz").val()==null|$("#order_fhrdz").val()==""){
+						$("#tip_fhrdz").html("不能为空");
+						$("#tip_fhrdz").css("display","block");
+					}
+			});
+			$("#order_fhrdz").blur(function(){
+					if(!($("#order_fhrdz").val()==null|$("#order_fhrdz").val()=="")){
+						$("#tip_fhrdz").css("display","none");
+						}else{
+							$("#tip_fhrdz").html("不能为空");
+							$("#tip_fhrdz").css("display","block");
+							}
+			});	
+			$("#order_fhrdz").click(function(){
+					if($("#order_fhrdh").val()==null|$("#order_fhrdh").val()==""){
+						$("#tip_fhrdh").html("不能为空");
+						$("#tip_fhrdh").css("display","block");
+					}
+			});
+			$("#order_fhrdh").blur(function(){
+					if(!($("#order_fhrdh").val()==null|$("#order_fhrdh").val()=="")){
+						var str = $("#order_fhrdh").val();
+						var pattern = new RegExp("^(13[0-9]|15[0|3|6|7|8|9]|18[8|9])\\d{8}$");
+						var flag = pattern.test($("#order_fhrdh").val());
+						if(flag==true){
+							$("#tip_fhrdh").css("display","none");
+						}
+						else if(flag==false){
+							$("#tip_fhrdh").html("格式不正确");
+							$("#tip_fhrdh").css("display","block");}
+						}else{
+							$("#tip_fhrdh").html("不能为空");
+							$("#tip_fhrdh").css("display","block");
+							}
+			});
+			$("#order_fhrdh").click(function(){
+					if($("#order_fhr").val()==null|$("#order_fhr").val()==""){
+						$("#tip_fhr").html("不能为空");
+						$("#tip_fhr").css("display","block");
+					}
+			});
+			$("#order_fhr").blur(function(){
+					if(!($("#order_fhr").val()==null|$("#order_fhr").val()=="")){
+						var pattern = new RegExp("^[\u4E00-\u9FA5]{2,6}");
+						var flag = pattern.test($("#order_fhr").val());
+						if(flag==true){
+							$("#tip_fhr").css("display","none");
+							}
+						else{
+								$("#tip_fhr").html("格式不正确");
+								$("#tip_fhr").css("display","block");
+							}
+						}else{
+							$("#tip_fhr").html("不能为空");
+							$("#tip_fhr").css("display","block");
+							}
+			});	
+			$("#order_fhryb").blur(function(){
+					if(!($("#order_fhryb").val()==null|$("#order_fhryb").val()=="")){
+							var pattern = new RegExp("^[1-9][0-9]{5}$");
+							var flag = pattern.test($("#order_fhryb").val());
+							if(flag==false){
+								$("#tip_fhryb").html("格式不正确");
+								$("#tip_fhryb").css("display","block");
+							}else{$("#tip_fhryb").css("display","none");}
+						}else{$("#tip_fhryb").css("display","none");}
+					
+			});
+			$("#order_shryb").blur(function(){
+					if(!($("#order_shryb").val()==null|$("#order_shryb").val()=="")){
+						var pattern = new RegExp("^[1-9][0-9]{5}$");
+						var flag = pattern.test($("#order_shryb").val());
+						if(flag==false){
+							$("#tip_shryb").html("格式不正确");
+							$("#tip_shryb").css("display","block");
+						}else{$("#tip_shryb").css("display","none");}
+					}else{$("#tip_shryb").css("display","none");}
+			});
+	});
+
+
+</script>
+<style type="text/css">
+td{
+	font-size:14px;
+	}
+</style>
+</head>
+
+<body onLoad="loadData('selProvance', 'selCity', 'selArea');loadData('selProvance2', 'selCity2', 'selArea2')">
+<div class="mainframe">
+<div class="myframe">
+<div class="path"><a href="orderindex.html">订单管理</a>&nbsp;><a href="addorder.html">添加订单</a><span style="margin-left:500px;">*为必填信息</span><hr /></div>
+<div class="msglist" style="margin-top:50px; margin-left:50px;">
+<form>
+<table>
+    <tr style="text-align:left;">
+    	<td>订单编号:</td><td><span style="color:#000; font-weight:bold; font-size:16px;" id="order_no"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>发货人:</td> 
+        <td><input type="text" name="order_fhr" id="order_fhr" />&nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_fhr"></span></td>
+    </tr>
+        <tr style="text-align:left;">
+    	<td>发货人电话:</td><td><input type="text" name="car_cd" id="order_fhrdh" />&nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_fhrdh"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>发货人地址:</td>
+        <td>
+			<select id="selProvance2" onChange="chgProvinces('selProvance2','selCity2','selArea2')">
+       			 <option></option>
+    		</select>
+   			<select id="selCity2" onChange="chgCitys('selCity2','selArea2')">
+      	 		 <option></option>
+    		</select>
+   			<select id="selArea2">
+       			 <option></option>
+  			</select>
+		</td>
+        <td><input type="text" name="car_cd" id="order_fhrdz" />&nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_fhrdz"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>发货人邮编:</td><td><input type="text" name="car_cd" id="order_fhryb"  /></td>
+        <td><span style="display:none" id="tip_fhryb"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>收货人:</td><td><input type="text" name="car_cd" id="order_shr" /> &nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_shr"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>收货人地址:</td>
+        <td>
+			<select id="selProvance" onChange="chgProvinces('selProvance','selCity','selArea')">
+       			 <option></option>
+    		</select>
+   			<select id="selCity" onChange="chgCitys('selCity','selArea')">
+      	 		 <option></option>
+    		</select>
+   			<select id="selArea">
+       			 <option></option>
+  			</select>
+           
+		</td>
+        <td><input type="text" name="order_shrdz" id="order_shrdz" /> &nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_shrdz"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>收货人电话:</td><td><input type="text" name="order_shrdh" id="order_shrdh" /> &nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_shrdh"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>收货人邮编:</td><td><input type="text" name="car_cd" id="order_shryb" /></td>
+        <td><span style="display:none" id="tip_shryb"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>货物名称:</td><td><input type="text" name="order_hwmc" id="order_hwmc" /> &nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_hwmc"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>货物类型:</td><td><select><option></option><option>家具.电器</option><option>服饰</option><option>电子产品</option><option>其他</option></select></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>货物件数:</td><td><input type="text" name="order_hwjs" id="order_hwjs" /> &nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_hwjs"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>货物重量:</td><td><input type="text" name="order_hwzl" id="order_hwzl" /> &nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_hwzl">货物重量不能为空</span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>发货站点:</td><td><select><option>昌平西关</option></select></td>
+    </tr>
+        <tr style="text-align:left;">
+    	<td>收货站点:</td><td><select name="order_shzd" id="order_shzd"><option></option><option>吉林-四平铁西总站</option></select> &nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_shzd">收货站点不能为空</span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>下单时间:</td><td><input type="text" name="order_time" id="order_time_nes" /> &nbsp;<span>*</span></td>
+        <td><span style="display:none">下单时间不能为空</span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>是否保价:</td><td><select><option>----</option><option>是</option><option>否</option></select>&nbsp;<span>金额</span>
+        <select id="cb_bj">
+        	<option>10</option>
+            <option>50</option>
+            <option>100</option>
+            <option>300</option>
+            <option>500</option>
+        </select></td>
+    </tr>
+    <tr>
+    	<td></td><td style="text-align:right;"><input type="submit" value="提交订单" /></td>
+    </tr>
+    
+</table>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

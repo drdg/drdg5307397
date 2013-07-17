@@ -1,0 +1,32 @@
+/* CSS Document */
+	*{
+		margin:0px;
+	}
+	
+	body{
+		background-image:url(../images/add2.gif);
+		background-attachment:fixed;
+	}
+	
+	table{
+		color:#FFFFFF;
+		width:600px;
+	}
+	
+	#sub{
+		background:transparent;
+		background-image:url(../images/add3.png);
+		border:0px;
+		float:right;
+		width:128px;
+		height:128px;
+	}
+	
+	select{
+		background:transparent;
+		width:375px;
+		color:#FF00FF;
+		border:0px;
+	}
+	
+	

@@ -1,0 +1,206 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link type="text/css" rel="stylesheet" href="../style_css/car_manager.css" />
+<script type="text/javascript" language="javascript" src="../js/jquery.js"></script>
+<script language="javascript" type="text/javascript">
+		$(document).ready(function(){
+			$("#cm_mail").click(function(){
+					if($("#cm_tel").val()==null|$("#cm_tel").val()==""){
+						$("#tip_tel").html("不能为空");
+						$("#tip_tel").css("display","block");
+					}
+			});	
+			$("#cm_mail").blur(function(){
+					if(!($("#cm_mail").val()==null|$("#cm_mail").val()=="")){
+						var pattern = new RegExp("^[0-9a-zA-Z]{1,20}@{1}[0-9a-zA-Z]+.{1}(com|cn)$");
+						var flag = pattern.test($("#cm_mail").val());
+						if(flag==true){
+							$("#tip_mail").css("display","none");
+						}
+						else if(flag==false){
+							$("#tip_mail").html("格式不正确");
+							$("#tip_mail").css("display","block");
+							}
+						}else{
+							$("#tip_mail").html("不能为空");
+							$("#tip_mail").css("display","block");
+							}
+			});
+			$("#cm_tel").click(function(){
+					if($("#cm_name").val()==null|$("#cm_name").val()==""){
+						$("#tip_name").html("不能为空");
+						$("#tip_name").css("display","block");
+					}
+			});	
+			$("#cm_tel").blur(function(){
+					if(!($("#cm_tel").val()==null|$("#cm_tel").val()=="")){
+						var pattern = new RegExp("^(13[0-9]|15[0|3|6|7|8|9]|18[8|9])\\d{8}$");
+						var flag = pattern.test($("#cm_tel").val());
+						if(flag==true){
+							$("#tip_tel").css("display","none");
+						}
+						else if(flag==false){
+							$("#tip_tel").html("格式不正确");
+							$("#tip_tel").css("display","block");
+							}
+						}else{
+							$("#tip_tel").html("不能为空");
+							$("#tip_tel").css("display","block");
+							}
+			});
+			$("#cm_name").click(function(){
+					if($("#cm_cmp").val()==null|$("#cm_cmp").val()==""){
+						$("#tip_cmp").html("不能为空");
+						$("#tip_cmp").css("display","block");
+					}
+			});	
+			$("#cm_name").blur(function(){
+					if(!($("#cm_name").val()==null|$("#cm_name").val()=="")){
+						var pattern = new RegExp("^[\u4E00-\u9FA5]{2,6}");
+						var flag = pattern.test($("#cm_name").val());
+						if(flag==true){
+							$("#tip_name").css("display","none");
+						}
+						else if(flag==false){
+							$("#tip_name").html("格式不正确");
+							$("#tip_name").css("display","block");
+							}
+						}else{
+							$("#tip_name").html("不能为空");
+							$("#tip_name").css("display","block");
+							}
+			});
+			$("#cm_cmp").click(function(){
+					if($("#cm_p").val()==null|$("#cm_p").val()==""){
+						$("#tip_p").html("不能为空");
+						$("#tip_p").css("display","block");
+					}
+			});	
+			$("#cm_cmp").blur(function(){
+					if(!($("#cm_cmp").val()==null|$("#cm_cmp").val()=="")){
+						if($("#cm_cmp").val()==$("#cm_p").val()){
+							$("#tip_cmp").html("正确");
+							$("#tip_cmp").css("display","block");
+							}
+						else{
+							$("#tip_cmp").html("格式不正确");
+							$("#tip_cmp").css("display","block");
+							}
+						}else{
+							$("#tip_cmp").html("不能为空");
+							$("#tip_cmp").css("display","block");
+							}
+			});
+			
+			$("#cm_p").click(function(){
+					if($("#cm_a").val()==null|$("#cm_a").val()==""){
+						$("#tip_a").html("不能为空");
+						$("#tip_a").css("display","block");
+					}
+			});
+			$("#cm_p").blur(function(){
+					if(!($("#cm_p").val()==null|$("#cm_p").val()=="")){
+						var pattern = new RegExp("^[0-9a-zA-Z]{6,12}$");
+						var flag = pattern.test($("#cm_p").val());
+						if(flag==true){
+							$("#tip_p").html("正确");
+							$("#tip_p").css("display","block");
+						}
+						else if(flag==false){
+							$("#tip_p").html("格式不正确");
+							$("#tip_p").css("display","block");
+							}
+						}else{
+							$("#tip_p").html("不能为空");
+							$("#tip_p").css("display","block");
+							}
+			});
+			$("#cm_a").blur(function(){
+					if(!($("#cm_a").val()==null|$("#cm_a").val()=="")){
+						var pattern = new RegExp("^[a-zA-Z0-9]{6,8}$");
+						var flag = pattern.test($("#cm_a").val());
+						if(flag==true){
+							$("#tip_a").html("正确");
+							$("#tip_a").css("display","block");
+						}
+						else if(flag==false){
+							$("#tip_a").html("格式不正确");
+							$("#tip_a").css("display","block");
+							}
+						}else{
+							$("#tip_a").html("不能为空");
+							$("#tip_a").css("display","block");
+							}
+			});
+			
+			
+			
+		});
+
+</script>
+</head>
+
+<body>
+<div class="mainframe">
+<div class="myframe">
+<div class="path"><a href="customerindex.html">客户管理</a>&nbsp;><a href="addcustomer.html">添加客户</a><span style="margin-left:500px;">*为必填信息</span><hr />
+</div>
+<div class="msglist" style="margin-top:50px;">
+<form>
+<table>
+	<tr style="text-align:left;">
+    	<td>账&nbsp;号:</td><td><input type="text" name="cm_a" id="cm_a" />&nbsp;<span>*</span><span style="display:none;" id="tip_a"></span>
+        </td>
+        <td><span style="color:#000">(6-8位,字母或数字)</span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>密&nbsp;码:</td><td><input type="password" name="cm_p" id="cm_p" />&nbsp;<span>*</span><span style="display:none" id="tip_p"></span></td>
+        <td><span style="color:#000; text-align:center;">(6-12位,字母或数字)</span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>确认密码:</td><td><input type="password" name="cm_cmp" id="cm_cmp" />&nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_cmp"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>姓&nbsp;名:</td><td><input type="text" name="cm_name" id="cm_name" />&nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_name"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>所在地:</td>
+        <td><select name="province"><option>--*--</option>
+        		<option>北京</option><option>天津</option><option>河北</option><option>山西</option><option>内蒙古</option><option>辽宁</option>
+                <option>吉林</option><option>黑龙江</option><option>上海</option><option>江苏</option><option>浙江</option><option>安徽</option>
+                <option>福建</option><option>江西</option><option>山东</option><option>河南</option><option>湖北</option><option>湖南</option>
+                <option>贵州</option><option>云南</option><option>西藏</option><option>陕西</option><option>甘肃</option><option>青海</option>
+                <option>宁夏</option><option>新疆</option><option>台湾</option><option>香港</option><option>澳门</option>
+        	</select>
+        </td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>性&nbsp;别:</td>
+        <td><input type="radio" name="r" checked="checked" />男<input type="radio" name="r" />女</td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>电&nbsp;话:</td><td><input type="text" name="cm_tel" id="cm_tel" />&nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_tel"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>邮&nbsp;箱:</td><td><input type="text" name="cm_mail" id="cm_mail" />&nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_mail"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>备&nbsp;注:</td><td><textarea rows="7" cols="25"></textarea></td>
+    </tr>
+    <tr>
+    	<td></td><td style="text-align:right;"><input type="submit" /></td>
+    </tr>
+</table>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

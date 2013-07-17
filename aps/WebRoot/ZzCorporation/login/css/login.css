@@ -1,0 +1,52 @@
+/* CSS Document */
+	*{
+		margin:0px;
+	}
+	
+	body{
+		background-image:url(../images/add2.gif);
+		background-attachment:fixed;
+	}
+
+	.mainDiv{
+		background-image:url(../images/mine.gif);
+		background-repeat:repeat-y;
+		margin:0 auto;
+		width:800px;
+		height:550px;
+		
+	}
+	
+	.leftDiv{
+		width:200px;
+		height:550px;
+		float:left;
+	}
+	
+	.leftDiv ul{
+		color:#FFFFFF;
+	}
+	
+	.leftDiv ul li{
+		list-style:none;
+		text-align:center;
+		margin-top:10px;
+		font-size:50px;
+		color:#FFFFFF;
+		font-family:"»ªÎÄÐÐ¿¬";
+	}
+	
+	.rightDiv{
+		float:right;
+		width:600px;
+		height:550px;
+		background-image:url(../images/mine.gif);
+		background-repeat:repeat-y;
+	}
+	
+	.rightDiv table{
+		color:#FFFFFF;
+		margin-left:50px;
+		border:2px #FF00FF solid;
+		margin-top:230px;
+	}

@@ -1,0 +1,38 @@
+/* CSS Document */
+
+	*{
+		margin:0px;
+	}
+	
+	body{
+		background-image:url(../images/add2.gif);
+		background-attachment:fixed;
+	}
+	
+	.mainDivadd{
+		width:512px;
+		height:512px;
+		background-image:url(../images/route1.png);
+	}
+	
+	.mainDivadd table{
+		color:#FFFFFF;
+		width:500px;
+	}
+	
+	.mainDivadd table input{
+		background:transparent;
+		border:1px #00FF00 dashed;
+		color:#FFFF00;
+	}
+	
+	#sub{
+		background:transparent;
+		width:128px;
+		height:128px;
+		background-image:url(../images/add3.png);
+		float:right;
+		border:0px;
+		cursor:pointer;
+		
+	}

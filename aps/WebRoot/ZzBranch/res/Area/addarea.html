@@ -1,0 +1,157 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../style_css/car_manager.css" />
+<script language="javascript" type="text/javascript" src="../js/area.js" charset="gb2312"></script>
+<script type="text/javascript" language="javascript" src="../js/jquery.js"></script>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function(){
+			$("#area_ctj").blur(function(){
+					if(!($("#area_ctj").val()==null|$("#area_ctj").val()=="")){
+						var pattern = new RegExp("^[0-9]{1,5}$");
+						var flag = pattern.test($("#area_ctj").val());
+						if(flag==false){
+							$("#tip_ctj").html("格式不正确");
+							$("#tip_ctj").css("display","block");
+						}else{$("#tip_ctj").css("display","none");}
+					}else{$("#tip_ctj").css("display","none");}
+			});	
+			$("#area_stj").blur(function(){
+					if(!($("#area_stj").val()==null|$("#area_stj").val()=="")){
+						var pattern = new RegExp("^[0-9]{1,5}$");
+						var flag = pattern.test($("#area_stj").val());
+						if(flag==false){
+							$("#tip_stj").html("格式不正确");
+							$("#tip_stj").css("display","block");
+						}else{$("#tip_stj").css("display","none");}
+					}else{$("#tip_stj").css("display","none");}
+			});   
+			$("#area_cgj").click(function(){
+					if($("#area_sgj").val()==null|$("#area_sgj").val()==""){
+						$("#tip_sgj").html("不能为空");
+						$("#tip_sgj").css("display","block");
+					}
+			});	
+			$("#area_cgj").blur(function(){
+					if(!($("#area_cgj").val()==null|$("#area_cgj").val()=="")){
+						var pattern = new RegExp("^[0-9]{1,5}$");
+						var flag = pattern.test($("#area_cgj").val());
+						if(flag==true){
+							$("#tip_cgj").css("display","none");
+						}
+						else if(flag==false){
+							$("#tip_cgj").html("格式不正确");
+							$("#tip_cgj").css("display","block");
+							}
+						}else{
+							$("#tip_cgj").html("不能为空");
+							$("#tip_cgj").css("display","block");
+							}
+			});	
+			$("#area_sgj").click(function(){
+					if($("#area_name").val()==null|$("#area_name").val()==""){
+						$("#tip_name").html("不能为空");
+						$("#tip_name").css("display","block");
+					}
+			});	
+			$("#area_sgj").blur(function(){
+					if(!($("#area_sgj").val()==null|$("#area_sgj").val()=="")){
+						var pattern = new RegExp("^[0-9]{1,5}$");
+						var flag = pattern.test($("#area_sgj").val());
+						if(flag==true){
+							$("#tip_sgj").css("display","none");
+						}
+						else if(flag==false){
+							$("#tip_sgj").html("格式不正确");
+							$("#tip_sgj").css("display","block");
+							}
+						}else{
+							$("#tip_sgj").html("不能为空");
+							$("#tip_sgj").css("display","block");
+							}
+			});
+			$("#area_name").blur(function(){
+					if(!($("#area_name").val()==null|$("#area_name").val()=="")){
+						var pattern = new RegExp("^[\u4E00-\u9FA5]{5,}");
+						var flag = pattern.test($("#area_name").val());
+						if(flag==true){
+							$("#tip_name").css("display","none");
+						}
+						else if(flag==false){
+							$("#tip_name").html("格式不正确");
+							$("#tip_name").css("display","block");
+							}
+						}else{
+							$("#tip_name").html("不能为空");
+							$("#tip_name").css("display","block");
+							}
+			});
+							   
+							   
+							   
+							   
+	});
+
+
+</script>
+</head>
+
+<body onLoad="loadData('selProvance', 'selCity', 'selArea')">
+<div class="mainframe">
+<div class="myframe">
+<div class="path"><a href="areaindex.html">配送范围管理</a>&nbsp;><a href="addarea.html">增加配送范围</a><span style="margin-left:500px;">*为必填信息</span><hr /></div>
+<div class="msglist" style="margin-top:50px;">
+<form>
+<table>
+    <tr style="text-align:left;">
+    	<td>配送范围名称:</td><td><input type="text" name="area_name" id="area_name" />&nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_name"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>配送起点:</td> 
+        <td><input type="text" name="car_cd" value="四平" disabled="disabled" /></td>
+    </tr>
+        <tr style="text-align:left;">
+    	<td>配送终点:</td>
+        <td>
+			<select id="selProvance" onChange="chgProvinces('selProvance','selCity','selArea')">
+       			 <option></option>
+    		</select>
+   			<select id="selCity" onChange="chgCitys('selCity','selArea')">
+      	 		 <option></option>
+    		</select>
+   			<select id="selArea">
+       			 <option></option>
+  			</select>
+            &nbsp;<span>*</span>
+		</td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>首公斤价格:</td><td><input type="text" name="area_sgj" id="area_sgj" />&nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_sgj"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>次公斤价格:</td><td><input type="text" name="area_cgj" id="area_cgj" />&nbsp;<span>*</span></td>
+        <td><span style="display:none" id="tip_cgj"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>首体积价格:</td><td><input type="text" name="area_stj" id="area_stj" /></td>
+        <td><span style="display:none" id="tip_stj"></span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>次体积价格:</td><td><input type="text" name="area_ctj" id="area_ctj" /></td>
+        <td><span style="display:none" id="tip_ctj"></span></td>
+    </tr>
+    <tr>
+    	<td></td><td style="text-align:right;"><input type="submit" /></td>
+    </tr>
+    
+</table>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

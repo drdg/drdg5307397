@@ -1,0 +1,94 @@
+/* CSS Document */
+	
+	*{
+		margin:0px;
+	}
+	
+	body{/*
+		background-image:url(../images/add2.gif);
+		http://localhost:8088/aps/Corporation/car*/
+		
+		background-image:url(http://localhost:8088/aps/ZzCorporation/car/images/add2.gif);
+		background-attachment:fixed;
+	}
+	
+	.bodyDiv{
+		width:100%;
+	}
+	
+	.mainDiv{
+		color:#FFFFFF;
+	}
+	
+	.topDiv{
+		background-repeat:no-repeat;
+		width:128px;
+		height:128px;
+	}
+	
+	.soso{
+		
+		width:700px;
+		height:128px;
+	}
+	
+	.detail{
+		cursor:pointer;
+		color:#00FF00;
+	}
+	
+	.dn{
+		display:none;
+	}
+	
+	.dncolor{
+		color:#00FFFF;
+	}
+	
+	.sosotext{
+		width:720px;
+		height:50px;
+		color:#FFFFFF;
+		font-family:"¿¬Ìå_GB2312";
+		background:transparent;
+		margin-top:70px;
+		position:absolute;
+		font-size:45px;
+		border:1px #FF00FF solid;
+	}
+	
+	#subsoso{
+		background:transparent;
+		background-image:url(http://localhost:8088/aps/ZzCorporation/car/images/list2.png);
+		margin-left:730px;
+		margin-top:70px;
+		border:1px #00FF00 solid;
+		width:55px;
+		height:54px;
+	}
+	
+	
+	
+	a:link {
+		color:#FF0000;
+		text-decoration: none;
+	}
+	a:visited {
+		text-decoration: none;
+		color: #FF0000;
+	}
+	a:hover {
+		text-decoration: none;
+		color: #FF0000;
+	}
+	a:active {
+		text-decoration: none;
+		color: #FF0000;
+	}
+	
+	a{
+		width:55px;
+		height:25px;
+		border:1px #FF0000 solid;
+		background-color:#000000;
+	}

@@ -1,0 +1,37 @@
+/* CSS Document */
+
+	*{
+		margin:0px;
+	}
+	
+	body{
+		background-image:url(../images/add2.gif);
+		background-attachment:fixed;
+	}
+	
+	.mainDiv{
+		width:700px;
+		height:400px;
+		margin:0 auto;
+	}
+	
+	.mainDiv table{
+		width:700px;
+		color:#FFFFFF;
+	}
+	
+	.mainDiv table tr td input{
+		background:transparent;
+		border:1px #00FF00 dashed;
+		color:#FFFF00;
+	}
+	
+	#ausub{
+		background:transparent;
+		background-image:url(../images/add3.png);
+		width:128px;
+		height:128px;
+		float:right;
+		border:0px;
+		
+	}

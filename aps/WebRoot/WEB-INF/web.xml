@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+  <welcome-file-list>
+    <welcome-file>login.jsp</welcome-file>
+  </welcome-file-list>
+
+  <servlet>
+    <servlet-name>Corporation</servlet-name>
+    <servlet-class>com.aps.servlet.Corporation</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>Branch</servlet-name>
+    <servlet-class>com.aps.servlet.Branch</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>asynchronous</servlet-name>
+    <servlet-class>com.aps.servlet.asynchronous</servlet-class>
+  </servlet>
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>Corporation</servlet-name>
+    <url-pattern>/Corporation</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>Branch</servlet-name>
+    <url-pattern>/Branch</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>asynchronous</servlet-name>
+    <url-pattern>/asynchronous</url-pattern>
+  </servlet-mapping>
+
+  
+  
+  <!-- filter xml 配置 -->
+  
+  <filter>
+  	<filter-name>MyFilter</filter-name>
+  	<filter-class>com.aps.servlet.filter.MyFilter</filter-class>
+  	<init-param>
+  		<param-name>encoding</param-name>
+  		<param-value>GBK</param-value>
+  	</init-param>
+  </filter>
+  
+  <filter-mapping>
+  	<filter-name>MyFilter</filter-name>
+  	<url-pattern>/*</url-pattern>
+	<dispatcher>FORWARD</dispatcher>  	
+	<dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+  
+</web-app>

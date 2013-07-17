@@ -1,0 +1,48 @@
+/* CSS Document */
+
+	*{
+		margin:0px;
+	}
+	
+	body{
+		background-image:url(../images/add2.gif);
+		background-attachment:fixed;
+	}
+
+	.mainDiv{
+		width:600px;
+		height:450px;
+	}
+	
+	.topDiv{
+		background:transparent;
+		background-image:url(../images/dranger1.png);
+		width:600px;
+		height:128px;
+		background-repeat:no-repeat;
+	}
+	
+	table{
+		color:#FFFFFF;
+		width:400px;
+	}
+	
+	table input{
+		background:transparent;
+		border:1px #00FF00 dashed;
+		color:#FFFF00;
+	}
+	
+	#sub{
+		background-image:url(../images/add3.png);
+		width:128px;
+		height:128px;
+		float:right;
+		border:0px;
+	}
+	
+	select{
+		background:transparent;
+		color:#FF00FF;
+		border:0px;
+	}

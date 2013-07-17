@@ -1,0 +1,48 @@
+/* CSS Document */
+
+	*{
+		margin:0px;
+	}
+	
+	a:link {
+	color: #CCCCCC;
+	text-decoration: none;
+	}
+	a:visited {
+		text-decoration: none;
+		color: #CCCCCC;
+	}
+	a:hover {
+		text-decoration: underline;
+		color: #FFFFFF;
+	}
+	a:active {
+		text-decoration: none;
+		color: #FFFFFF;
+	}
+	
+	body{
+		background-image:url(../images/add2.gif);
+		background-attachment:fixed;
+		overflow:hidden;
+	}
+	
+	.mainDiv{
+		width:900px;
+	}
+	
+	.leftDiv{
+		background-image:url(../images/bg.jpg);
+		width:200px;
+		float:left;
+	
+		overflow:auto;
+		height:550px;
+		background-attachment:fixed;
+		color:#CCCCCC;
+	}
+	
+	.rightDiv{
+		float:right;
+		width:698px;
+	}

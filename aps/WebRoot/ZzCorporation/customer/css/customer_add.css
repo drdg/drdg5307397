@@ -1,0 +1,38 @@
+/* CSS Document */
+
+	*{
+		margin:0px;
+	}
+	
+	body{
+		background-image:url(../images/add2.gif);
+		background-attachment:fixed;
+	}
+	
+	.tt{
+		color:#FFFFFF;
+		width:400px;
+	}
+	
+	.tt2{
+		background:transparent;
+		border:1px #00FF00 dashed;
+		color:#FFFF00;
+		width:150px;
+	}
+	
+	#sub{
+		background:transparent;
+		background-image:url(../images/add3.png);
+		width:128px;
+		height:128px;
+		border:0px;
+		float:right;
+	}
+	
+	select{
+		background:transparent;
+		border:0px;
+		color:#FF00FF;
+	}
+

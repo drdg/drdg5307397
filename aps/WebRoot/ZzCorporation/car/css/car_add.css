@@ -1,0 +1,42 @@
+/* CSS Document */
+	*{
+		margin:0 auto;
+	}
+
+	body{
+		background-image:url(../images/add2.gif);
+		background-attachment:fixed;
+	}
+	
+	.mainDiv{
+		width:500px;
+		height:450px;
+		margin:0 auto;
+	}
+	
+	.mainDiv table{
+		width:500px;
+		color:#FFFFFF;
+	}
+	
+	.mainDiv table input{
+		background:transparent;
+		border:1px #00FF00 dashed;
+		color:#FFFF00;
+	}
+	
+	#sub{
+		background:transparent;
+		background-image:url(../images/add3.png);
+		border:0px;
+		width:128px;
+		height:128px;
+		float:right;
+		cursor:pointer;
+	}
+	
+	.mainDiv select{
+		background:transparent;
+		border:0px;
+		color:#FF00FF;
+	}

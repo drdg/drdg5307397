@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<link rel="stylesheet" type="text/css" href="../style_css/car_manager.css" />
+<script type="text/javascript" language="javascript" src="../js/jquery.js"></script>
+<script language="javascript" type="text/javascript">
+	$(document).ready(function(){
+			var check = false;
+			$("#com_name").blur(function(){
+					if($("#com_name").val()!=""){
+						var pattern = new RegExp("^[\u4E00-\u9FA5]{2,10}");
+						var flag = pattern.test($("#com_name").val());
+						if(flag==true){
+							check = true;
+							$("#tip_name").css("display","none");
+						}else{
+							$("#tip_name").html("格式不正确");
+							$("#tip_name").css("display","block");
+							}
+					}else{
+							$("#tip_name").html("不能为空");
+							$("#tip_name").css("display","block");
+						}
+			
+			
+			});			   				   
+	});
+</script>
+</head>
+
+<body>
+<div class="mainframe">
+<div class="myframe">
+<div class="path">权限管理&nbsp;>增加权限<span style="margin-left:500px;">*为必填信息</span><hr /></div>
+<div class="msglist" style="margin-top:50px;">
+<form>
+<table align="center">
+    <tr style="text-align:left;">
+    	<td>权限:</td><td><input type="text" name="com_name" id="com_name" />&nbsp;<span>*</span><span style="display:none;" id="tip_name"></span></td>
+        <td><span style="color:#000; font-size:14px">(10位之内汉字)</span></td>
+    </tr>
+    <tr style="text-align:left;">
+    	<td>权限描述:</td><td><textarea rows="4" cols="15" name="car_bz"></textarea></td>
+    </tr>
+    <tr>
+    	<td></td><td style="text-align:right;"><input type="submit" /></td>
+    </tr>
+    
+</table>
+</form>
+</div>
+</div>
+</div>
+</body>
+</html>

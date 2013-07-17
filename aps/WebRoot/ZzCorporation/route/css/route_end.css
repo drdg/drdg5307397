@@ -1,0 +1,41 @@
+/* CSS Document */
+
+	*{
+		margin:0px;
+	}
+	
+	body{
+		background-image:url(../images/add2.gif);
+		background-attachment:fixed;
+	}
+
+	.mainDiv{
+		width:600px;
+		height:400px;
+	}
+	
+	.topDiv{
+		background-image:url(../images/route2.png);
+		width:128px;
+		height:128px;
+	}
+	
+	table{
+		color:#FFFFFF;
+		width:400px;
+	}
+	
+	select{
+		background:transparent;
+		color:#FF00FF;
+		border:0px;
+	}
+	
+	#sub{
+		background:transparent;
+		background-image:url(../images/add3.png);
+		width:128px;
+		height:128px;
+		border:0px;
+		float:right;
+	}

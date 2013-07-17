@@ -1,0 +1,60 @@
+/* CSS Document */
+	*{
+		margin-top:0px;
+		margin-left:0px;
+	}
+
+	body{
+		background-image:url(../images/add2.gif);
+		background-attachment:fixed;
+		overflow:hidden;
+	}
+	
+	.tab{
+		width:520px;
+	}
+	
+	.mainDiv{
+		margin:0 auto;
+		width:550px;
+	}
+	
+	
+	.bottom{
+		color:#FFFFFF;
+		height:400px;
+		
+	}
+	
+	#ztcss{
+		background:transparent;
+		color:#FFFF00;
+		border:1px #00FF00 dashed;
+		width:85px;
+	}
+	
+	#fir{
+		width:80px;
+	}
+	
+	.sub{
+		background:transparent;
+		width:128px;
+		height:128px;
+		background-image:url(../images/add3.png);
+		background-repeat:no-repeat;
+		border:0px;
+		cursor:pointer;
+		z-index:-1;
+		
+	}
+	
+	.errors{
+		border-bottom-color:#FF0000;
+		background-color:#FF0000;
+	}
+	
+	#esal1{
+		border:1px #0000FF solid;
+		cursor:pointer;
+	}
